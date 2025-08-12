@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>YEP</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      .custom-scroll::-webkit-scrollbar {
+        height: 8px;
+        width: 6px;
+      }
+
+      .custom-scroll::-webkit-scrollbar-track {
+        background: transparent;
+        margin-top: 7px;
+        margin-bottom: 7px;
+      }
+
+      .custom-scroll::-webkit-scrollbar-thumb {
+        background-color: #e8e5e5;
+        border-radius: 9999px;
+        box-shadow: inset 0 0 0 1px white;
+      }
+
+      .custom-scroll:hover::-webkit-scrollbar-thumb {
+        background-color: rgb(205, 206, 206);
+      }
+
+      .custom-scroll::-webkit-scrollbar-button {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body
+    class="flex flex-col min-h-screen max-w-[100%] mx-auto bg-gray-50 text-gray-800 gap-4"
+  >
+    <!-- HEADER -->
+    <header
+      class="px-5 py-1 bg-white grid grid-cols-[1fr_auto_1fr] items-center"
+    >
+      <!-- Логотип -->
+      <div class="justify-self-start">
+        <a href="home.html"
+          ><img src="img/logo.svg" alt="Logo" class="h-10"
+        /></a>
+      </div>
+      <!-- Поиск -->
+      <div class="flex items-center w-full p-4 rounded-xl bg-white">
+        <div class="flex items-center w-full">
+          <div
+            class="flex items-center justify-between w-[100%] text-sm text-grey-800 border border-1 border-sky-500 rounded-full rounded-full gap-1 m-3"
+          >
+            <input
+              type="text"
+              placeholder="Найти"
+              class="text-sm text-grey-800 bg-transparent outline-none flex-1 p-1 pl-3 placeholder-gray-400"
+            />
+            <button
+              class="flex items-center justify-center h-8 w-14 px-2 py-[0.1rem] text-sm font-medium rounded-full transition shadow bg-sky-500 hover:bg-blue-500 active:bg-blue-500 transition-all duration-200"
+              data-type="pair"
+            >
+              <img
+                src="img/search_icon.svg"
+                alt="Pair"
+                class="h-4 whitescale brightness-10"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Навигационное меню -->
+      <div class="flex justify-self-end gap-4">
+        <!-- Аккаунт -->
+        <button
+          class="flex relative inline-block group items-center justify-center border border-dashed border-gray-800 rounded-full h-10 w-10 p-1 hover:bg-gray-100"
+          onclick="openFilterMenu()"
+        >
+          <img
+            src="img/account.svg"
+            alt="Account"
+            class="h-[1rem] filter brightness-0 saturate-0 opacity-70"
+          />
+          <div
+            class="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-gray-800 text-white text-sm rounded-md px-3 py-1 opacity-0 group-hover:opacity-100 transition pointer-events-none z-10"
+          >
+            Аккаунт
+            <div
+              class="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45"
+            ></div>
+          </div>
+        </button>
+        <!-- Сообщение -->
+        <a href="messages.html">
+          <button
+            class="flex relative inline-block group items-center justify-center border border-dashed border-sky-500 rounded-full h-10 w-10 p-1 bg-white hover:bg-gray-100"
+            onclick="openFilterMenu()"
+          >
+            <img
+              src="img/messages.svg"
+              alt="Messages"
+              class="h-[0.8rem] filter brightness-0 saturate-0 opacity-70"
+            />
+            <div
+              class="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-gray-800 text-white text-sm rounded-md px-3 py-1 opacity-0 group-hover:opacity-100 transition pointer-events-none z-10"
+            >
+              Сообщения
+              <div
+                class="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45"
+              ></div>
+            </div>
+          </button>
+        </a>
+        <!-- Мои встречи -->
+        <button
+          class="flex relative inline-block group items-center justify-center border border-dashed border-gray-800 rounded-full h-10 w-10 p-1 hover:bg-gray-100"
+          onclick="openFilterMenu()"
+        >
+          <img
+            src="img/meets.svg"
+            alt="Meetings"
+            class="h-[1.1rem] filter brightness-0 saturate-0 opacity-70"
+          />
+          <div
+            class="absolute top-full left-1/2 -translate-x-1/2 whitespace-nowrap mt-2 bg-gray-800 text-white text-sm rounded-md px-3 py-1 opacity-0 group-hover:opacity-100 transition pointer-events-none z-10"
+          >
+            Мои встречи
+            <div
+              class="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45"
+            ></div>
+          </div>
+        </button>
+        <!-- Создать событие -->
+        <button
+          class="flex relative inline-block group items-center justify-center border border-dashed border-gray-800 rounded-full h-10 w-10 p-1 hover:bg-gray-100"
+          onclick="openFilterMenu()"
+        >
+          <img
+            src="img/create.svg"
+            alt="Create"
+            class="h-[1.1rem] filter brightness-0 saturate-0 opacity-70"
+          />
+          <div
+            class="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-gray-800 text-white text-sm rounded-md px-3 py-1 opacity-0 group-hover:opacity-100 transition pointer-events-none z-10"
+          >
+            Создать событие
+            <div
+              class="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45"
+            ></div>
+          </div>
+        </button>
+      </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="w-full h-[calc(100vh-80px)] text-gray-800 overflow-hidden">
+      <div class="flex flex-col max-w-[95%] mx-auto gap-4 h-full">
+        <div
+          class="grid grid-cols-[1fr_1.2fr_1fr] gap-4 rounded-xl w-full h-full"
+        >
+          <!-- Карточка пользователя -->
+          <div class="bg-white rounded-xl">
+            <div class="relative bg-white p-4 rounded-xl flex flex-col gap-1">
+              <!-- Главное фото -->
+              <div class="relative">
+                <img
+                  src="img/girlfifth.jpg"
+                  alt="Фото"
+                  class="rounded-xl aspect-square object-cover w-full"
+                />
+              </div>
+
+              <!-- Галерея -->
+              <div class="relative">
+                <div class="flex items-center overflow-y-auto custom-scroll">
+                  <div class="inline-flex items-center gap-2 my-2">
+                    <img
+                      src="img/girlfifth.jpg"
+                      alt="Фото"
+                      class="rounded-xl aspect-square object-cover w-[7rem]"
+                    />
+                    <img
+                      src="img/girlfifth.jpg"
+                      alt="Фото"
+                      class="rounded-xl aspect-square object-cover w-[7rem]"
+                    />
+                    <img
+                      src="img/girlfifth.jpg"
+                      alt="Фото"
+                      class="rounded-xl aspect-square object-cover w-[7rem]"
+                    />
+                    <img
+                      src="img/girlfifth.jpg"
+                      alt="Фото"
+                      class="rounded-xl aspect-square object-cover w-[7rem]"
+                    />
+                    <img
+                      src="img/girlfifth.jpg"
+                      alt="Фото"
+                      class="rounded-xl aspect-square object-cover w-[7rem]"
+                    />
+                    <img
+                      src="img/girlfifth.jpg"
+                      alt="Фото"
+                      class="rounded-xl aspect-square object-cover w-[7rem]"
+                    />
+                    <img
+                      src="img/girlfifth.jpg"
+                      alt="Фото"
+                      class="rounded-xl aspect-square object-cover w-[7rem]"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Карточка пользователя -->
+          <div class="bg-white rounded-xl w-full overflow-x-auto custom-scroll">
+            <div class="relative bg-white px-7 py-7 rounded-xl">
+              <!-- Основные сведения -->
+              <div class="flex flex-col gap-4">
+                <div class="flex flex-col gap-0.5">
+                  <h1 class="text-lg font-semibold text-gray-600 pb-1">
+                    Основные сведения
+                  </h1>
+                  <div class="flex gap-3 text-base items-center text-gray-600">
+                    <div class="flex items-end gap-1">
+                      <img
+                        src="img/name.svg"
+                        alt="Time"
+                        class="h-5 w-5 grayscale brightness-0"
+                      />
+                      <p>Алина</p>
+                    </div>
+                    <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                    <div class="flex items-center gap-1">
+                      <p>@alina_lotova</p>
+                    </div>
+                  </div>
+                  <div class="flex gap-3 text-base items-center text-gray-600">
+                    <div class="flex items-end gap-1">
+                      <img
+                        src="img/age.svg.lnk"
+                        alt="Time"
+                        class="h-5 w-5 grayscale brightness-0"
+                      />
+                      <p>Женщина</p>
+                    </div>
+                    <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                    <div class="flex items-center gap-1">
+                      <p>24.01.1998</p>
+                    </div>
+                  </div>
+                  <div class="flex gap-3 text-base items-center text-gray-600">
+                    <div class="flex items-end gap-1">
+                      <img
+                        src="img/rating.svg"
+                        alt="Time"
+                        class="h-5 w-5 grayscale brightness-0"
+                      />
+                      <p>Мужчину</p>
+                    </div>
+                    <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                    <div class="flex items-center gap-1">
+                      <p>27-31</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Расширенные сведения -->
+                <div class="flex flex-col gap-2">
+                  <div class="flex flex-col gap-0.5 mb-20">
+                    <h1 class="text-lg font-semibold text-gray-600 pb-1">
+                      Расширенные сведения
+                    </h1>
+                    <div
+                      class="flex flex-wrap items-center gap-x-4 gap-y-2 text-base text-gray-600"
+                    >
+                      <!-- Работа -->
+                      <div class="flex items-center gap-1 shrink-0">
+                        <img
+                          src="img/work.svg"
+                          alt="Work"
+                          class="h-5 w-5 grayscale brightness-0"
+                        />
+                        <p class="whitespace-nowrap">Работа: дизайнер</p>
+                      </div>
+                      <img
+                        src="img/ellipse.svg"
+                        alt="Ellipse"
+                        class="mt-1 shrink-0"
+                      />
+
+                      <!-- Образование -->
+                      <div class="flex items-center gap-1 shrink-0">
+                        <img
+                          src="img/education.svg"
+                          alt="Education"
+                          class="h-5 w-5 grayscale brightness-0"
+                        />
+                        <p class="whitespace-nowrap">Образование: высшее</p>
+                      </div>
+                      <img
+                        src="img/ellipse.svg"
+                        alt="Ellipse"
+                        class="mt-1 shrink-0"
+                      />
+
+                      <!-- Отношения -->
+                      <div class="flex items-end gap-1 shrink-0">
+                        <img
+                          src="img/rating.svg"
+                          alt="Education"
+                          class="h-5 w-5 grayscale brightness-0"
+                        />
+                        <p class="whitespace-nowrap">Отношения: свободна</p>
+                      </div>
+                      <img
+                        src="img/ellipse.svg"
+                        alt="Ellipse"
+                        class="mt-1 shrink-0"
+                      />
+
+                      <!-- Дети -->
+                      <div class="flex items-center gap-1 shrink-0">
+                        <img
+                          src="img/child.svg"
+                          alt="Education"
+                          class="h-5 w-5 grayscale brightness-0"
+                        />
+                        <p class="whitespace-nowrap">Дети: нет, но хочу</p>
+                      </div>
+                      <img
+                        src="img/ellipse.svg"
+                        alt="Ellipse"
+                        class="mt-1 shrink-0"
+                      />
+
+                      <!-- Животные -->
+                      <div class="flex items-end gap-1 shrink-0">
+                        <img
+                          src="img/pets.svg"
+                          alt="Education"
+                          class="h-5 w-5 grayscale brightness-0"
+                        />
+                        <p class="whitespace-nowrap">Животные: кот/кошка</p>
+                      </div>
+                      <img
+                        src="img/ellipse.svg"
+                        alt="Ellipse"
+                        class="mt-1 shrink-0"
+                      />
+
+                      <!-- Религия -->
+                      <div class="flex items-end gap-1 shrink-0">
+                        <img
+                          src="img/religion.svg"
+                          alt="Education"
+                          class="h-5 w-5 grayscale brightness-0"
+                        />
+                        <p class="whitespace-nowrap">Религия: агностицизм</p>
+                      </div>
+                      <img
+                        src="img/ellipse.svg"
+                        alt="Ellipse"
+                        class="mt-1 shrink-0"
+                      />
+
+                      <!-- Знак зодиака -->
+                      <div class="flex items-end gap-1 shrink-0">
+                        <img
+                          src="img/zodiac_sign.svg"
+                          alt="Education"
+                          class="h-5 w-5 grayscale brightness-0"
+                        />
+                        <p class="whitespace-nowrap">
+                          Знак зодиака: не указано
+                        </p>
+                      </div>
+                      <img
+                        src="img/ellipse.svg"
+                        alt="Ellipse"
+                        class="mt-1 shrink-0"
+                      />
+
+                      <!-- Алкоголь -->
+                      <div class="flex items-end gap-1 shrink-0">
+                        <img
+                          src="img/alcohol.svg"
+                          alt="Education"
+                          class="h-5 w-5 grayscale brightness-0"
+                        />
+                        <p class="whitespace-nowrap">Алкоголь: редко</p>
+                      </div>
+                      <img
+                        src="img/ellipse.svg"
+                        alt="Ellipse"
+                        class="mt-1 shrink-0"
+                      />
+
+                      <!-- Курение -->
+                      <div class="flex items-end gap-1 shrink-0">
+                        <img
+                          src="img/smoking.svg"
+                          alt="Education"
+                          class="h-5 w-5 grayscale brightness-0"
+                        />
+                        <p class="whitespace-nowrap">Курение: не курю</p>
+                      </div>
+                      <img
+                        src="img/ellipse.svg"
+                        alt="Ellipse"
+                        class="mt-1 shrink-0"
+                      />
+
+                      <!-- Языки -->
+                      <div class="flex items-end gap-1 shrink-0">
+                        <img
+                          src="img/language.svg"
+                          alt="Education"
+                          class="h-5 w-5 grayscale brightness-0"
+                        />
+                        <p style="white-space: normal; hyphens: none">
+                          Языки: русский, французский
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Описание -->
+                  <div class="flex w-full items-center">
+                    <div
+                      class="flex border w-full max-h-40 custom-scroll overflow-y-scroll border-dashed border-gray-400 rounded-xl my-3 px-3 py-2"
+                    >
+                      <p class="text-gray-800 text-base">
+                        Я обожаю вечерние прогулки, когда город оживает, вкусный
+                        кофе с ноткой карамели и разговоры, которые заставляют
+                        сердце биться чаще. Может, мы будем танцевать под
+                        звездами или спорить о том, какой коктейль лучше? Я
+                        открыта к приключениям и готова узнать, что заставляет
+                        тебя улыбаться.
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Bottom карточки -->
+                  <div class="flex items-center justify-between">
+                    <div class="flex gap-2 items-center">
+                      <button
+                        class="flex items-center gap-1 border-[0.01rem] border-gray-500 border-dashed hover:bg-gray-100 rounded-full px-2 py-0.5"
+                      >
+                        <img
+                          src="img/rating.svg"
+                          alt="Rating"
+                          class="h-4 w-4"
+                        />
+                        <p class="text-sm text-gray-600">4.7</p>
+                      </button>
+                      <button
+                        class="hover:bg-gray-100 rounded-full border-[0.01rem] border-gray-500 border-dashed hover:bg-gray-100 p-1"
+                      >
+                        <img
+                          src="img/share.svg"
+                          alt="Share"
+                          class="h-4 w-4 hover:bg-gray-100 rounded-full"
+                        />
+                      </button>
+                    </div>
+                    <button
+                      class="flex items-center px-3 py-1.5 rounded-full text-sm text-sky-500 font-semibold border-2 border-sky-500 hover:border-sky-200 active:border-sky-200 transition-all duration-200"
+                    >
+                      Редактировать
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <h1 class="text-lg font-semibold text-gray-600 pb-1">
+                Основные сведения
+              </h1>
+              <p>Имя: Алина</p>
+              <p>Id: @alina_lotova</p>
+              <p>Возраст: 24 года</p>
+              <p>Пол: паркет</p>
+              <p>Я ищу: мужчину</p>
+
+              <div class="flex flex-col gap-0.5">
+                <h1 class="text-lg font-semibold text-gray-600 pb-1">
+                  Расширенные сведения
+                </h1>
+                <p>Работа: дизайнер</p>
+                <p>Образование: высшее</p>
+                <p>Отношения: свободна</p>
+                <p>Дети: нет, но хочу</p>
+                <p>Животные: кот</p>
+                <p>Религия: агностицизм</p>
+                <p>Знак зодиака: не указано</p>
+                <p>Алкоголь: за компанию</p>
+                <p>Курение: нет</p>
+                <p>Характер: экстраверт</p>
+              </div>
+              <!-- Описание -->
+              <div class="flex w-full items-center">
+                <div
+                  class="flex border w-full max-h-40 custom-scroll overflow-y-scroll border-dashed border-gray-400 rounded-xl my-3 px-3 py-2"
+                >
+                  <p class="text-gray-800 text-base">
+                    Я обожаю вечерние прогулки, когда город оживает, вкусный
+                    кофе с ноткой карамели и разговоры, которые заставляют
+                    сердце биться чаще. Может, мы будем танцевать под звездами
+                    или спорить о том, какой коктейль лучше? Я открыта к
+                    приключениям и готова узнать, что заставляет тебя улыбаться.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Bottom карточки -->
+              <div class="flex items-center justify-between">
+                <div class="flex gap-2 items-center">
+                  <button
+                    class="flex items-center gap-1 border-[0.01rem] border-gray-500 border-dashed hover:bg-gray-100 rounded-full px-2 py-0.5"
+                  >
+                    <img src="img/rating.svg" alt="Rating" class="h-4 w-4" />
+                    <p class="text-sm text-gray-600">4.7</p>
+                  </button>
+                  <button
+                    class="hover:bg-gray-100 rounded-full border-[0.01rem] border-gray-500 border-dashed hover:bg-gray-100 p-1"
+                  >
+                    <img
+                      src="img/share.svg"
+                      alt="Share"
+                      class="h-4 w-4 hover:bg-gray-100 rounded-full"
+                    />
+                  </button>
+                </div>
+                <button
+                  class="flex items-center px-3 py-1.5 rounded-full text-sm text-sky-500 font-semibold border-2 border-sky-500 hover:border-sky-200 active:border-sky-200 transition-all duration-200"
+                >
+                  Редактировать
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Список чатов  -->
+          <div
+            class="flex flex-col items-center gap-y-4 overflow-y-auto custom-scroll max-h-full"
+          >
+            <div
+              class="flex flex-col items-center justify-between w-full gap-2"
+            >
+              <div
+                class="flex flex-col items-center w-full gap-y-2 p-4 bg-white rounded-xl"
+              >
+                <div class="w-full overflow-x-auto custom-scroll">
+                  <div
+                    class="inline-flex items-center gap-2 my-3 px-3 whitespace-nowrap"
+                  >
+                    <button
+                      class="h-8 bg-sky-500 rounded-full px-3 text-sm text-white"
+                    >
+                      Все
+                    </button>
+                    <button
+                      class="h-8 bg-white border border-dashed border-sky-500 rounded-full px-3 text-sm text-sky-500 hover:bg-sky-50"
+                    >
+                      Парные
+                    </button>
+                    <button
+                      class="h-8 bg-white border border-dashed border-sky-500 rounded-full px-3 text-sm text-sky-500 hover:bg-sky-50"
+                    >
+                      Групповые
+                    </button>
+                    <button
+                      class="h-8 bg-white border border-dashed border-sky-500 rounded-full px-3 text-sm text-sky-500 hover:bg-sky-50"
+                    >
+                      Системные
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Сообщение -->
+                <div
+                  class="flex items-center justify-between w-full rounded-xl gap-2 text-sm text-gray-800 px-4 py-2 hover:bg-gray-50 cursor-pointer"
+                >
+                  <div class="flex items-center gap-2">
+                    <div class="h-8 w-8 gap-2">
+                      <img
+                        src="img/girl12.jpg"
+                        alt="Avatar"
+                        class="h-8 w-8 rounded-full"
+                      />
+                    </div>
+                    <div class="flex flex-col">
+                      <div class="text-sm font-semibold text-gray-800">
+                        <p>Liza Ammi</p>
+                      </div>
+                      <div class="text-sm text-gray-600">
+                        <p>Я хочу познакомиться ...</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="grid grid-rows-2 justify-items-center gap-2">
+                    <p class="text-gray-500 text-xs">Сегодня</p>
+                    <div
+                      class="flex items-center justify-center h-4 w-4 rounded-full bg-sky-500"
+                    >
+                      <p class="text-white text-xs p-1">3</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- ┅ Разделитель -->
+                <div
+                  class="border-t border-dashed border-gray-300 w-full"
+                ></div>
+                <!-- Сообщение -->
+                <div
+                  class="flex items-center justify-between w-full rounded-xl gap-2 text-sm text-gray-800 px-4 py-2 hover:bg-gray-50 cursor-pointer"
+                >
+                  <div class="flex items-center gap-2">
+                    <div class="h-8 w-8 gap-2">
+                      <img
+                        src="img/girl12.jpg"
+                        alt="Avatar"
+                        class="h-8 w-8 rounded-full"
+                      />
+                    </div>
+                    <div class="flex flex-col">
+                      <div class="text-sm font-semibold text-gray-800">
+                        <p>Liza Ammi</p>
+                      </div>
+                      <div class="text-sm text-gray-600">
+                        <p>Я хочу познакомиться...</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="grid grid-rows-2 justify-items-center gap-2">
+                    <p class="text-gray-500 text-xs">Сегодня</p>
+                    <div
+                      class="flex items-center justify-center h-4 w-4 rounded-full bg-sky-500"
+                    >
+                      <p class="text-white text-xs p-1">7</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- ┅ Разделитель -->
+                <div
+                  class="border-t border-dashed border-gray-300 w-full"
+                ></div>
+                <!-- Сообщение -->
+                <div
+                  class="flex items-center justify-between w-full rounded-xl gap-2 text-sm text-gray-800 px-4 py-2 bg-gray-100 hover:bg-gray-50 cursor-pointer"
+                >
+                  <div class="flex items-center gap-2">
+                    <div class="h-8 w-8 gap-2">
+                      <img
+                        src="img/girl12.jpg"
+                        alt="Avatar"
+                        class="h-8 w-8 rounded-full"
+                      />
+                    </div>
+                    <div class="flex flex-col">
+                      <div class="text-sm font-semibold text-gray-800">
+                        <p>Liza Ammi</p>
+                      </div>
+                      <div class="text-sm text-gray-600">
+                        <p>Я хочу познакоми...</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="grid grid-rows-2 justify-items-center gap-2">
+                    <p class="text-gray-500 text-xs">Сегодня</p>
+                  </div>
+                </div>
+                <!-- ┅ Разделитель -->
+                <div
+                  class="border-t border-dashed border-gray-300 w-full"
+                ></div>
+                <!-- Сообщение -->
+                <div
+                  class="flex items-center justify-between w-full rounded-xl gap-2 text-sm text-gray-800 px-4 py-2 hover:bg-gray-50 cursor-pointer"
+                >
+                  <div class="flex items-center gap-2">
+                    <div class="h-8 w-8 gap-2">
+                      <img
+                        src="img/girl12.jpg"
+                        alt="Avatar"
+                        class="h-8 w-8 rounded-full"
+                      />
+                    </div>
+                    <div class="flex flex-col">
+                      <div class="text-sm font-semibold text-gray-800">
+                        <p>Liza Ammi</p>
+                      </div>
+                      <div class="text-sm text-gray-600">
+                        <p>Я хочу познакомиться...</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="grid grid-rows-2 justify-items-center gap-2">
+                    <p class="text-gray-500 text-xs">Сегодня</p>
+                    <div
+                      class="flex items-center justify-center h-4 w-4 rounded-full bg-sky-500"
+                    >
+                      <p class="text-white text-xs p-1">2</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- ┅ Разделитель -->
+                <div
+                  class="border-t border-dashed border-gray-300 w-full"
+                ></div>
+                <!-- Сообщение -->
+                <div
+                  class="flex items-center justify-between w-full rounded-xl gap-2 text-sm text-gray-800 px-4 py-2 hover:bg-gray-50 cursor-pointer"
+                >
+                  <div class="flex items-center gap-2">
+                    <div class="h-8 w-8 gap-2">
+                      <img
+                        src="img/girl12.jpg"
+                        alt="Avatar"
+                        class="h-8 w-8 rounded-full"
+                      />
+                    </div>
+                    <div class="flex flex-col">
+                      <div class="text-sm font-semibold text-gray-800">
+                        <p>Liza Ammi</p>
+                      </div>
+                      <div class="text-sm text-gray-600">
+                        <p>Я хочу познакомиться...</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="grid grid-rows-2 justify-items-center gap-2">
+                    <p class="text-gray-500 text-xs">Сегодня</p>
+                    <div
+                      class="flex items-center justify-center h-4 w-4 rounded-full bg-sky-500"
+                    >
+                      <p class="text-white text-xs p-1">1</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- ┅ Разделитель -->
+                <div
+                  class="border-t border-dashed border-gray-300 w-full"
+                ></div>
+                <!-- Сообщение -->
+                <div
+                  class="flex items-center justify-between w-full rounded-xl gap-2 text-sm text-gray-800 px-4 py-2 hover:bg-gray-50 cursor-pointer"
+                >
+                  <div class="flex items-center gap-2">
+                    <div class="h-8 w-8 gap-2">
+                      <img
+                        src="img/girl12.jpg"
+                        alt="Avatar"
+                        class="h-8 w-8 rounded-full"
+                      />
+                    </div>
+                    <div class="flex flex-col">
+                      <div class="text-sm font-semibold text-gray-800">
+                        <p>Liza Ammi</p>
+                      </div>
+                      <div class="text-sm text-gray-600">
+                        <p>Я хочу познакомиться...</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="grid grid-rows-2 justify-items-center gap-2">
+                    <p class="text-gray-500 text-xs">Сегодня</p>
+                    <div
+                      class="flex items-center justify-center h-4 w-4 rounded-full bg-sky-500"
+                    >
+                      <p class="text-white text-xs p-1">1</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- ┅ Разделитель -->
+                <div
+                  class="border-t border-dashed border-gray-300 w-full"
+                ></div>
+                <!-- Сообщение -->
+                <!-- Сообщение -->
+                <div
+                  class="flex items-center justify-between w-full rounded-xl gap-2 text-sm text-gray-800 px-4 py-2 hover:bg-gray-50 cursor-pointer"
+                >
+                  <div class="flex items-center gap-2">
+                    <div class="h-8 w-8 gap-2">
+                      <img
+                        src="img/girl12.jpg"
+                        alt="Avatar"
+                        class="h-8 w-8 rounded-full"
+                      />
+                    </div>
+                    <div class="flex flex-col">
+                      <div class="text-sm font-semibold text-gray-800">
+                        <p>Liza Ammi</p>
+                      </div>
+                      <div class="text-sm text-gray-600">
+                        <p>Я хочу познакомиться...</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="grid grid-rows-2 justify-items-center gap-2">
+                    <p class="text-gray-500 text-xs">Сегодня</p>
+                    <div
+                      class="flex items-center justify-center h-4 w-4 rounded-full bg-sky-500"
+                    >
+                      <p class="text-white text-xs p-1">5</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- ┅ Разделитель -->
+                <div
+                  class="border-t border-dashed border-gray-300 w-full"
+                ></div>
+                <!-- Сообщение -->
+                <div
+                  class="flex items-center justify-between w-full rounded-xl gap-2 text-sm text-gray-800 px-4 py-2 hover:bg-gray-50 cursor-pointer"
+                >
+                  <div class="flex items-center gap-2">
+                    <div class="h-8 w-8 gap-2">
+                      <img
+                        src="img/girl12.jpg"
+                        alt="Avatar"
+                        class="h-8 w-8 rounded-full"
+                      />
+                    </div>
+                    <div class="flex flex-col">
+                      <div class="text-sm font-semibold text-gray-800">
+                        <p>Liza Ammi</p>
+                      </div>
+                      <div class="text-sm text-gray-600">
+                        <p>Я хочу познакомиться...</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="grid grid-rows-2 justify-items-center gap-2">
+                    <p class="text-gray-500 text-xs">Сегодня</p>
+                    <div
+                      class="flex items-center justify-center h-4 w-4 rounded-full bg-sky-500"
+                    >
+                      <p class="text-white text-xs p-1">11</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- ┅ Разделитель -->
+                <div
+                  class="border-t border-dashed border-gray-300 w-full"
+                ></div>
+                <!-- Сообщение -->
+                <!-- Сообщение -->
+                <div
+                  class="flex items-center justify-between w-full rounded-xl gap-2 text-sm text-gray-800 px-4 py-2 hover:bg-gray-50 cursor-pointer"
+                >
+                  <div class="flex items-center gap-2">
+                    <div class="h-8 w-8 gap-2">
+                      <img
+                        src="img/girl12.jpg"
+                        alt="Avatar"
+                        class="h-8 w-8 rounded-full"
+                      />
+                    </div>
+                    <div class="flex flex-col">
+                      <div class="text-sm font-semibold text-gray-800">
+                        <p>Liza Ammi</p>
+                      </div>
+                      <div class="text-sm text-gray-600">
+                        <p>Я хочу познакомиться...</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="grid grid-rows-2 justify-items-center gap-2">
+                    <p class="text-gray-500 text-xs">Сегодня</p>
+                    <div
+                      class="flex items-center justify-center h-4 w-4 rounded-full bg-sky-500"
+                    >
+                      <p class="text-white text-xs p-1">7</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- ┅ Разделитель -->
+                <div
+                  class="border-t border-dashed border-gray-300 w-full"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

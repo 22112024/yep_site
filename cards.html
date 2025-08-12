@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>YEP</title>
+  </head>
+
+  <!-- BODY -->
+  <body class="bg-gray-50 text-gray-800">
+    <!-- HEADER -->
+    <header class="p-5 bg-white shadow-sd flex items-center justify-between">
+      <a href="home.html"><img src="img/logo.svg" alt="Logo" class="h-10" /></a>
+      <div class="flex bg-[rgba(105,173,237,0.1)] rounded-full p-1 space-x-0.5">
+        <button
+          class="filter-btn filter-btn-active flex items-center px-3 py-1.5 text-sm text-white font-medium rounded-full transition shadow bg-[rgba(105,173,237,1)] hover:bg-[rgba(105,173,237,0.9)]"
+          data-type="pair"
+        >
+          <img src="img/pair.svg" alt="Pair" class="h-5 mr-1" />
+        </button>
+        <button
+          class="flex items-center px-3 py-1.5 text-sm text-[rgba(105,173,237,1)] font-medium rounded-full transition"
+          data-type="group"
+        >
+          <img src="img/group.svg" alt="Group" class="h-5 mr-1" />
+        </button>
+      </div>
+      <button onclick="openFilterMenu()">
+        <img src="img/filters.svg" alt="Фильтр" class="h-4" />
+      </button>
+    </header>
+
+    <!-- CARDS -->
+    <main class="p-4 space-y-4 pb-28">
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <a href="card.html">
+          <div
+            class="relative bg-white p-4 rounded-xl shadow-sd hover:shadow-md active:shadow-md"
+          >
+            <div class="relative">
+              <img
+                src="img/girlthird.jpg"
+                alt="Фото"
+                class="rounded-xl aspect-[4/5] object-cover mb-2"
+              />
+              <div
+                class="flex items-center absolute top-2 left-2 bg-white/50 space-x-1 px-2 py-1 rounded-md"
+              >
+                <img src="img/star.svg" alt="Star" class="h-4 w-4" />
+                <p class="text-sm font-semibold text-gray-800">4.7</p>
+              </div>
+              <div class="absolute top-2 right-2 bg-white/50 p-2 rounded-xl">
+                <img src="img/kebabmenu.svg" alt="KMenu" />
+              </div>
+            </div>
+            <h2 class="text-mg font-semibold text-gray-800">Алина, 22</h2>
+            <div class="flex gap-1 text-mg text-[rgba(138,143,153,1)]">
+              <img src="img/time.svg" alt="Time" />
+              <p>3 августа</p>
+              <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+              <p>17:17</p>
+            </div>
+            <div class="flex gap-1 text-mg text-[rgba(138,143,153,1)]">
+              <img src="img/restaurant.svg" alt="Restaurant" />
+              <p>Ресторан</p>
+              <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+              <p>"Пушкин"</p>
+            </div>
+
+            <button
+              class="absolute bottom-7 right-4 px-3 py-1.5 rounded-lg bg-[rgba(105,173,237,1)] hover:bg-[rgba(105,173,237,0.9)]"
+            >
+              <p class="text-mg text-white">Пригласить</p>
+            </button>
+          </div>
+        </a>
+
+        <a href="card.html">
+          <div
+            class="relative bg-white p-4 rounded-xl shadow-sd hover:shadow-md active:shadow-md"
+          >
+            <div class="relative">
+              <img
+                src="img/girl10.jpg"
+                alt="Фото"
+                class="rounded-xl aspect-[4/5] object-cover mb-2"
+              />
+              <div
+                class="flex items-center absolute top-2 left-2 bg-white/50 space-x-1 px-2 py-1 rounded-md"
+              >
+                <img src="img/star.svg" alt="Star" class="h-4 w-4" />
+                <p class="text-sm font-semibold text-gray-800">4.7</p>
+              </div>
+              <div class="absolute top-2 right-2 bg-white/50 p-2 rounded-xl">
+                <img src="img/kebabmenu.svg" alt="KMenu" />
+              </div>
+            </div>
+            <h2 class="text-mg font-semibold text-gray-800">Анна, 24</h2>
+            <div
+              class="flex items-center gap-1 text-mg text-[rgba(138,143,153,1)]"
+            >
+              <img src="img/time.svg" alt="Time" />
+              <p>3 августа</p>
+              <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+              <p>17:17</p>
+            </div>
+            <div class="flex gap-1 text-mg text-[rgba(138,143,153,1)]">
+              <img src="img/restaurant.svg" alt="Restaurant" />
+              <p>Ресторан</p>
+              <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+              <p>"Пушкин"</p>
+            </div>
+            <div class="flex gap-1 text-mg text-[rgba(138,143,153,1)]">
+              <img src="img/price.svg" alt="Price" />
+              <p>Условия оплаты</p>
+              <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+              <p>50 / 50</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="card.html">
+          <div
+            class="relative bg-white p-4 rounded-xl shadow-sd hover:shadow-md active:shadow-md"
+          >
+            <div class="relative">
+              <img
+                src="img/girl10.jpg"
+                alt="Фото"
+                class="rounded-xl aspect-[4/5] object-cover mb-2"
+              />
+              <div
+                class="flex items-center absolute top-2 left-2 bg-white/50 space-x-1 px-2 py-1 rounded-md"
+              >
+                <img src="img/star.svg" alt="Star" class="h-4 w-4" />
+                <p class="text-sm font-semibold text-gray-800">4.7</p>
+              </div>
+              <div class="absolute top-2 right-2 bg-white/50 p-2 rounded-xl">
+                <img src="img/kebabmenu.svg" alt="KMenu" />
+              </div>
+            </div>
+            <div
+              class="grid grid-cols-2 items-center gap-x-8 gap-y-1 text-mg text-[rgba(138,143,153,1)]"
+            >
+              <h2 class="text-mg font-semibold text-gray-800 col-span-2">
+                Анна, 24
+              </h2>
+              <div class="flex gap-1 col-start-1 items-center">
+                <img src="img/time.svg" alt="Time" class="h-4 w-4" />
+                <p>3 августа</p>
+                <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                <p>17:17</p>
+              </div>
+              <div class="flex gap-1 col-start-2 items-center justify-end">
+                <img src="img/price.svg" alt="Price" class="h-3.5 w-4" />
+                <p>50 / 50</p>
+              </div>
+              <div class="flex gap-1 col-start-1 items-center">
+                <img
+                  src="img/restaurant.svg"
+                  alt="Restaurant"
+                  class="h-4 w-4"
+                />
+                <p>Ресторан</p>
+                <img src="img/ellipse.svg" alt="Ellipse" class="mt-1 h-1 w-1" />
+                <p>"Пушкин"</p>
+              </div>
+              <div class="flex justify-center mt-3 col-span-2">
+                <button
+                  class="px-3 py-1.5 rounded-lg bg-[rgba(105,173,237,1)] hover:bg-[rgba(105,173,237,0.9)]"
+                >
+                  <p class="text-mg text-white">Пригласить</p>
+                </button>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="card.html">
+          <div
+            class="relative bg-white p-4 rounded-xl shadow-sd hover:shadow-md active:shadow-md"
+          >
+            <div class="relative">
+              <img
+                src="img/girl10.jpg"
+                alt="Фото"
+                class="rounded-xl aspect-[4/5] object-cover mb-2"
+              />
+              <div
+                class="flex items-center absolute top-2 left-2 bg-white/50 space-x-1 px-2 py-1 rounded-md"
+              >
+                <img src="img/star.svg" alt="Star" class="h-4 w-4" />
+                <p class="text-sm font-semibold text-gray-800">4.7</p>
+              </div>
+              <div class="absolute top-2 right-2 bg-white/50 p-2 rounded-xl">
+                <img src="img/kebabmenu.svg" alt="KMenu" />
+              </div>
+            </div>
+            <div
+              class="grid grid-cols-2 grid-cols-[1fr,1.2fr] items-center gap-x-0 gap-y-1 text-mg text-[rgba(138,143,153,1)]"
+            >
+              <h2 class="text-mg font-semibold text-gray-800 col-span-2">
+                Анна, 24
+              </h2>
+              <div class="flex gap-1 col-start-1 items-center">
+                <img src="img/time.svg" alt="Time" class="h-4 w-4" />
+                <p>3 августа</p>
+                <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                <p>17:17</p>
+              </div>
+              <div class="flex gap-1 col-start-2 items-center">
+                <img
+                  src="img/restaurant.svg"
+                  alt="Restaurant"
+                  class="h-4 w-4"
+                />
+                <p>Ресторан</p>
+                <img src="img/ellipse.svg" alt="Ellipse" class="mt-1 h-1 w-1" />
+                <p>"Пушкин"</p>
+              </div>
+              <div class="flex gap-1 col-start-1 items-center">
+                <img src="img/price.svg" alt="Price" class="h-4 w-4" />
+                <p>50 / 50</p>
+              </div>
+              <div class="flex gap-1 col-start-2 items-center">
+                <img src="img/location.svg" alt="Restaurant" class="h-4 w-4" />
+                <p>ул. Пушкинская, 17</p>
+              </div>
+              <div class="flex justify-center mt-3 col-span-2">
+                <button
+                  class="px-3 py-1.5 rounded-lg bg-[rgba(105,173,237,1)] hover:bg-[rgba(105,173,237,0.9)]"
+                >
+                  <p class="text-mg text-white">Пригласить</p>
+                </button>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="card.html">
+          <div
+            class="relative bg-white p-4 rounded-xl shadow-sd hover:shadow-md active:shadow-md"
+          >
+            <div class="relative">
+              <img
+                src="img/girl10.jpg"
+                alt="Фото"
+                class="rounded-xl aspect-[4/5] object-cover mb-2"
+              />
+              <div
+                class="flex items-center absolute top-2 left-2 bg-white/50 space-x-1 px-2 py-1 rounded-md"
+              >
+                <img src="img/star.svg" alt="Star" class="h-4 w-4" />
+                <p class="text-sm font-semibold text-gray-800">4.7</p>
+              </div>
+              <div class="absolute top-2 right-2 bg-white/50 p-2 rounded-xl">
+                <img src="img/kebabmenu.svg" alt="KMenu" />
+              </div>
+            </div>
+            <h2 class="text-mg font-semibold text-gray-800">Анна, 24</h2>
+            <div
+              class="flex items-center gap-1 text-mg text-[rgba(138,143,153,1)]"
+            >
+              <img src="img/time.svg" alt="Time" />
+              <p>3 августа</p>
+              <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+              <p>17:17</p>
+            </div>
+            <div class="flex gap-1 text-mg text-[rgba(138,143,153,1)]">
+              <img src="img/restaurant.svg" alt="Restaurant" />
+              <p>Ресторан</p>
+              <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+              <p>"Пушкин"</p>
+            </div>
+            <div class="flex gap-1 text-mg text-[rgba(138,143,153,1)]">
+              <img src="img/price.svg" alt="Price" />
+              <p>Условия оплаты</p>
+              <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+              <p>50 / 50</p>
+            </div>
+            <div class="flex justify-center mt-3">
+              <button
+                class="px-3 py-1.5 rounded-lg bg-[rgba(105,173,237,1)] hover:bg-[rgba(105,173,237,0.9)]"
+              >
+                <p class="text-mg text-white">Пригласить</p>
+              </button>
+            </div>
+          </div>
+        </a>
+
+        <a href="card.html">
+          <div
+            class="relative bg-white p-4 rounded-xl shadow-sd hover:shadow-md active:shadow-md"
+          >
+            <div class="relative">
+              <img
+                src="img/girl10.jpg"
+                alt="Фото"
+                class="rounded-xl aspect-[4/5] object-cover mb-2"
+              />
+              <div
+                class="flex items-center absolute top-2 left-2 bg-white/50 space-x-1 px-2 py-1 rounded-md"
+              >
+                <img src="img/star.svg" alt="Star" class="h-4 w-4" />
+                <p class="text-sm font-semibold text-gray-800">4.7</p>
+              </div>
+              <div class="absolute top-2 right-2 bg-white/50 p-2 rounded-xl">
+                <img src="img/kebabmenu.svg" alt="KMenu" />
+              </div>
+            </div>
+            <h2 class="text-mg font-semibold text-gray-800">Анна, 24</h2>
+            <div class="flex gap-1 text-mg text-[rgba(138,143,153,1)]">
+              <img src="img/time.svg" alt="Time" />
+              <p>3 августа</p>
+              <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+              <p>17:17</p>
+            </div>
+            <div class="flex gap-1 text-mg text-[rgba(138,143,153,1)]">
+              <img src="img/restaurant.svg" alt="Restaurant" />
+              <p>Ресторан</p>
+              <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+              <p>"Пушкин"</p>
+            </div>
+            <span
+              class="absolute bottom-[4.7rem] right-4 inline-block mt-2 text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded"
+              >$ 50 / 50</span
+            >
+            <div class="flex justify-center mt-3">
+              <button
+                class="px-3 py-1.5 rounded-lg bg-[rgba(105,173,237,1)] hover:bg-[rgba(105,173,237,0.9)]"
+              >
+                <p class="text-mg text-white">Пригласить</p>
+              </button>
+            </div>
+          </div>
+        </a>
+
+        <a href="card.html">
+          <div
+            class="relative bg-white p-4 rounded-xl shadow-sd hover:shadow-md active:shadow-md"
+          >
+            <div class="relative">
+              <img
+                src="img/girlfifth.jpg"
+                alt="Фото"
+                class="rounded-xl aspect-[4/5] object-cover"
+              />
+              <div
+                class="flex items-center absolute top-2 left-2 bg-white/50 space-x-1 px-2 py-1 rounded-md"
+              >
+                <img src="img/star.svg" alt="Star" class="h-4 w-4" />
+                <p class="text-sm font-semibold text-gray-800">4.7</p>
+              </div>
+              <div class="absolute top-2 right-2 bg-white/50 p-2 rounded-xl">
+                <img src="img/kebabmenu.svg" alt="KMenu" />
+              </div>
+            </div>
+            <h2 class="text-mg font-semibold text-gray-800">Диана, 21</h2>
+            <div class="flex gap-1 text-mg text-[rgba(138,143,153,1)]">
+              <img src="img/time.svg" alt="Time" />
+              <p>3 августа</p>
+              <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+              <p>17:17</p>
+            </div>
+            <div class="flex gap-1 text-mg text-[rgba(138,143,153,1)]">
+              <img src="img/restaurant.svg" alt="Restaurant" />
+              <p>Ресторан</p>
+              <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+              <p>"Пушкин"</p>
+            </div>
+            <div class="flex gap-4">
+              <span
+                class="inline-block mt-2 text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded"
+                >$ 0 / 100</span
+              >
+              <span
+                class="inline-block mt-2 text-xs bg-red-100 text-blue-800 px-2 py-1 rounded flex items-center gap-1"
+              >
+                <svg
+                  class="h-4 w-4 text-blue-500"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"
+                  />
+                </svg>
+                7 км
+              </span>
+              <span
+                class="inline-block mt-2 text-xs bg-violet-100 text-blue-800 px-2 py-1 rounded"
+                >$ 0 / 100</span
+              >
+            </div>
+            <button
+              class="absolute bottom-14 right-4 px-3 py-1.5 rounded-lg bg-[rgba(105,173,237,1)] hover:bg-[rgba(105,173,237,0.9)]"
+            >
+              <p class="text-mg text-white">Пригласить</p>
+            </button>
+          </div>
+        </a>
+
+        <a href="card.html">
+          <div
+            class="relative bg-white p-4 rounded-xl shadow-sd hover:shadow-md active:shadow-md"
+          >
+            <div class="relative">
+              <img
+                src="img/girlthird.jpg"
+                alt="Фото"
+                class="rounded-xl aspect-[4/5] object-cover"
+              />
+              <div
+                class="flex items-center absolute top-2 left-2 bg-white/50 space-x-1 px-2 py-1 rounded-md"
+              >
+                <img src="img/star.svg" alt="Star" class="h-4 w-4" />
+                <p class="text-sm font-semibold text-gray-800">4.7</p>
+              </div>
+              <div class="absolute top-2 right-2 bg-white/50 p-2 rounded-xl">
+                <img src="img/kebabmenu.svg" alt="KMenu" />
+              </div>
+            </div>
+            <h2 class="text-mg font-semibold text-gray-800">Елена, 23</h2>
+            <div class="flex gap-1 text-mg text-[rgba(138,143,153,1)]">
+              <img src="img/time.svg" alt="Time" />
+              <p>3 августа</p>
+              <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+              <p>17:17</p>
+            </div>
+            <div class="flex gap-1 text-mg text-[rgba(138,143,153,1)]">
+              <img src="img/restaurant.svg" alt="Restaurant" />
+              <p>Ресторан</p>
+              <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+              <p>"Пушкин"</p>
+            </div>
+            <span
+              class="inline-block mt-2 text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded"
+              >$ 100 / 0</span
+            >
+            <button
+              class="absolute bottom-10 right-4 px-3 py-1.5 rounded-lg bg-[rgba(105,173,237,1)] hover:bg-[rgba(105,173,237,0.9)]"
+            >
+              <p class="text-mg text-white">Пригласить</p>
+            </button>
+          </div>
+        </a>
+
+        <a href="card.html">
+          <div
+            class="bg-white p-4 rounded-xl shadow-sd hover:shadow-md active:shadow-md"
+          >
+            <img
+              src="img/girl9.jpg"
+              alt="Фото"
+              class="rounded-xl aspect-[4/5] object-cover"
+            />
+            <h2 class="text-lg font-semibold">Онлайн-встреча по фронтенду</h2>
+            <p class="text-sm text-gray-600">Завтра в 19:00</p>
+            <span
+              class="inline-block mt-2 text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded"
+              >Онлайн</span
+            >
+          </div>
+        </a>
+
+        <a href="card.html">
+          <div
+            class="bg-white p-4 rounded-xl shadow-sd hover:shadow-md active:shadow-md"
+          >
+            <img
+              src="img/girl10.jpg"
+              alt="Фото"
+              class="rounded-xl aspect-[4/5] object-cover"
+            />
+            <h2 class="text-lg font-semibold">Онлайн-встреча по фронтенду</h2>
+            <p class="text-sm text-gray-600">Завтра в 19:00</p>
+            <span
+              class="inline-block mt-2 text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded"
+              >Онлайн</span
+            >
+          </div>
+        </a>
+
+        <a href="card.html">
+          <div
+            class="bg-white p-4 rounded-xl shadow-sd hover:shadow-md active:shadow-md"
+          >
+            <img
+              src="img/girl11.jpg"
+              alt="Фото"
+              class="rounded-xl aspect-[4/5] object-cover"
+            />
+            <h2 class="text-lg font-semibold">Онлайн-встреча по фронтенду</h2>
+            <p class="text-sm text-gray-600">Завтра в 19:00</p>
+            <span
+              class="inline-block mt-2 text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded"
+              >Онлайн</span
+            >
+          </div>
+        </a>
+
+        <a href="card.html">
+          <div
+            class="bg-white p-4 rounded-xl shadow-sd hover:shadow-md active:shadow-md"
+          >
+            <img
+              src="img/girl12.jpg"
+              alt="Фото"
+              class="rounded-xl aspect-[4/5] object-cover"
+            />
+            <h2 class="text-lg font-semibold">Онлайн-встреча по фронтенду</h2>
+            <p class="text-sm text-gray-600">Завтра в 19:00</p>
+            <span
+              class="inline-block mt-2 text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded"
+              >Онлайн</span
+            >
+          </div>
+        </a>
+
+        <a href="card.html">
+          <div
+            class="bg-white p-4 rounded-xl shadow-sd hover:shadow-md active:shadow-md"
+          >
+            <img
+              src="img/girl7.jpg"
+              alt="Фото"
+              class="rounded-xl aspect-[4/5] object-cover"
+            />
+            <h2 class="text-mg font-semibold">Валя, 21</h2>
+            <p class="text-sm text-gray-600">Завтра в 19:00</p>
+            <span
+              class="inline-block mt-2 text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded"
+              >$ 0 / 100</span
+            >
+          </div>
+        </a>
+
+        <a href="card.html">
+          <div
+            class="bg-white p-4 rounded-xl shadow-sd hover:shadow-md active:shadow-md"
+          >
+            <img
+              src="img/girl8.jpg"
+              alt="Фото"
+              class="rounded-xl aspect-[4/5] object-cover"
+            />
+            <h2 class="text-mg font-semibold">Каролина, 27</h2>
+            <p class="text-sm text-gray-600">Завтра в 19:00</p>
+            <span
+              class="inline-block mt-2 text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded"
+              >$ 50 / 50</span
+            >
+          </div>
+        </a>
+
+        <a href="card.html">
+          <div
+            class="bg-white p-4 rounded-xl shadow-sd hover:shadow-md active:shadow-md"
+          >
+            <img
+              src="img/girl9.jpg"
+              alt="Фото"
+              class="rounded-xl aspect-[4/5] object-cover"
+            />
+            <h2 class="text-lg font-semibold">Онлайн-встреча по фронтенду</h2>
+            <p class="text-sm text-gray-600">Завтра в 19:00</p>
+            <span
+              class="inline-block mt-2 text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded"
+              >Онлайн</span
+            >
+          </div>
+        </a>
+
+        <a href="card.html">
+          <div
+            class="bg-white p-4 rounded-xl shadow-sd hover:shadow-md active:shadow-md"
+          >
+            <img
+              src="img/girl10.jpg"
+              alt="Фото"
+              class="rounded-xl aspect-[4/5] object-cover"
+            />
+            <h2 class="text-lg font-semibold">Онлайн-встреча по фронтенду</h2>
+            <p class="text-sm text-gray-600">Завтра в 19:00</p>
+            <span
+              class="inline-block mt-2 text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded"
+              >Онлайн</span
+            >
+          </div>
+        </a>
+
+        <a href="card.html">
+          <div
+            class="bg-white p-4 rounded-xl shadow-sd hover:shadow-md active:shadow-md"
+          >
+            <img
+              src="img/girl7.jpg"
+              alt="Фото"
+              class="rounded-xl aspect-[4/5] object-cover"
+            />
+            <h2 class="text-mg font-semibold">Валя, 21</h2>
+            <p class="text-sm text-gray-600">Завтра в 19:00</p>
+            <span
+              class="inline-block mt-2 text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded"
+              >$ 0 / 100</span
+            >
+          </div>
+        </a>
+
+        <a href="card.html">
+          <div
+            class="bg-white p-4 rounded-xl shadow-sd hover:shadow-md active:shadow-md"
+          >
+            <img
+              src="img/girl8.jpg"
+              alt="Фото"
+              class="rounded-xl aspect-[4/5] object-cover"
+            />
+            <h2 class="text-mg font-semibold">Каролина, 27</h2>
+            <p class="text-sm text-gray-600">Завтра в 19:00</p>
+            <span
+              class="inline-block mt-2 text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded"
+              >$ 50 / 50</span
+            >
+          </div>
+        </a>
+
+        <a href="card.html">
+          <div
+            class="bg-white p-4 rounded-xl shadow-sd hover:shadow-md active:shadow-md"
+          >
+            <img
+              src="img/girl9.jpg"
+              alt="Фото"
+              class="rounded-xl aspect-[4/5] object-cover"
+            />
+            <h2 class="text-lg font-semibold">Онлайн-встреча по фронтенду</h2>
+            <p class="text-sm text-gray-600">Завтра в 19:00</p>
+            <span
+              class="inline-block mt-2 text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded"
+              >Онлайн</span
+            >
+          </div>
+        </a>
+
+        <a href="card.html">
+          <div
+            class="bg-white p-4 rounded-xl shadow-sd hover:shadow-md active:shadow-md"
+          >
+            <img
+              src="img/girl10.jpg"
+              alt="Фото"
+              class="rounded-xl aspect-[4/5] object-cover"
+            />
+            <h2 class="text-lg font-semibold">Онлайн-встреча по фронтенду</h2>
+            <p class="text-sm text-gray-600">Завтра в 19:00</p>
+            <span
+              class="inline-block mt-2 text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded"
+              >Онлайн</span
+            >
+          </div>
+        </a>
+      </div>
+    </main>
+
+    <nav
+      class="flex justify-around fixed bottom-0 left-0 right-0 bg-white/80 border-t rounded-full mx-10 my-5 py-5 text-sm"
+    >
+      <button class="flex flex-col items-center text-blue-600">
+        <img src="img/home.svg" alt="Home" />
+      </button>
+      <button class="flex flex-col items-center text-gray-600">
+        <img src="img/meets.svg" alt="Meet" />
+      </button>
+      <button class="flex flex-col items-center text-gray-600">
+        <img src="img/map.svg" alt="Map" />
+      </button>
+      <button class="flex flex-col items-center text-gray-600">
+        <img src="img/messages.svg" alt="Messages" />
+      </button>
+      <button class="flex flex-col items-center text-gray-600">
+        <img src="img/account.svg" alt="Account" />
+      </button>
+    </nav>
+  </body>
+</html>

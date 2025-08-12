@@ -1,0 +1,325 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>YEP</title>
+    <style>
+      html,
+      body {
+        margin: 20px;
+        padding: 0;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 0 0 70px white, 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+
+  <body class="flex flex-col min-h-screen bg-gray-50 text-gray-800">
+    <!-- Основной контент -->
+    <main class="w-full text-gray-800">
+      <div class="flex flex-col max-w-[80%] mx-auto p-5 gap-5">
+        <!-- Список сообщений -->
+        <div class="grid grid-cols-[2fr_5fr_3fr] gap-2 rounded-lg w-full">
+          <!-- Левая колонка -->
+          <div
+            class="flex flex-col w-full h-full bg-white gap-4 px-3 py-3 rounded-tl-xl rounded-bl-xl"
+          >
+            <!-- 🔙 Кнопка назад и заголовок -->
+            <div class="p-2 bg-white flex items-center justify-center">
+              <div class="justify-self-start">
+                <a href="home.html"
+                  ><img src="img/logo.svg" alt="Logo" class="h-10"
+                /></a>
+              </div>
+            </div>
+
+            <!-- ┅ Разделитель -->
+            <div class="border-t border-dashed border-gray-300 w-full"></div>
+
+            <!-- Меню -->
+            <ul class="flex flex-col items-start gap-3 pt-3 pl-3">
+              <!-- 👤 Главная -->
+              <li
+                class="flex items-center gap-2 w-full cursor-pointer hover:bg-gray-50 rounded-lg p-3"
+              >
+                <div class="h-4 w-4">
+                  <img
+                    src="img/home.svg"
+                    alt="Home"
+                    class="filter brightness-0 saturate-0 opacity-100"
+                  />
+                </div>
+                <p class="text-gray-800 font-semibold text-sm">Главная</p>
+              </li>
+              <!-- 👤 Аккаунт -->
+              <li
+                class="flex items-center gap-2 w-full cursor-pointer hover:bg-gray-50 rounded-lg p-3"
+              >
+                <div class="h-4 w-4">
+                  <img
+                    src="img/account.svg"
+                    alt="Account"
+                    class="filter brightness-0 saturate-0 opacity-100"
+                  />
+                </div>
+                <p class="text-gray-800 font-semibold text-sm">Аккаунт</p>
+              </li>
+              <!-- 👤 Сообщения -->
+              <li
+                class="flex items-center gap-2 w-[calc(100%+0.75rem)] cursor-pointer bg-gray-50 rounded-tl-3xl rounded-bl-3xl p-3 -mr-[0.75rem]"
+                style="
+                  clip-path: path(
+                    'M 0 0 H calc(100% - 0.75rem) C 90% 25%, 90% 75%, calc(100% - 0.75rem) 100% H 0 Z'
+                  );
+                "
+              >
+                <div class="h-4 w-4">
+                  <img
+                    src="img/messages.svg"
+                    alt="Messages"
+                    class="filter brightness-0 saturate-0 opacity-100 pt-0.5"
+                  />
+                </div>
+                <p class="text-gray-800 font-semibold text-sm">Сообщения</p>
+              </li>
+              <!-- 👤 События -->
+              <li
+                class="flex items-center gap-2 w-full cursor-pointer hover:bg-gray-50 rounded-lg p-3"
+              >
+                <div class="h-[1rem] w-[1rem]">
+                  <img
+                    src="img/meets.svg"
+                    alt="Events"
+                    class="filter brightness-0 saturate-0 opacity-100"
+                  />
+                </div>
+                <p class="text-gray-800 font-semibold text-sm">События</p>
+              </li>
+              <!-- 👤 Создать событие -->
+              <li
+                class="flex items-center gap-1 w-full cursor-pointer hover:bg-gray-50 rounded-lg p-3"
+              >
+                <div class="h-[1.2rem] w-[1.2rem]">
+                  <img
+                    src="img/create.svg"
+                    alt="Create Event"
+                    class="filter brightness-0 saturate-0 opacity-100"
+                  />
+                </div>
+                <p class="text-gray-800 font-semibold text-sm">
+                  Создать событие
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Диалоговое окно -->
+          <div class="bg-white p-4">
+            <div class="flex bg-gray-50 w-full p-2 rounded">Liza Lavova</div>
+          </div>
+          <!-- Список чатов  -->
+          <div class="flex flex-col items-center gap-y-2">
+            <div class="flex items-center w-full p-4 rounded-xl bg-sky-100">
+              <div class="flex items-center w-full">
+                <div
+                  class="flex items-center justify-between w-[90%] text-sm text-gray-800 bg-white rounded-full gap-1 m-3"
+                >
+                  <input
+                    type="text"
+                    placeholder="Найти"
+                    class="text-sm text-gray-800 bg-transparent outline-none flex-1 p-1 pl-3 placeholder-gray-400 border border-dashed border-gray-800 rounded-full"
+                  />
+                </div>
+                <div
+                  class="flex items-center justify-center rounded-full cursor-pointer hover:bg-gray-100 active:bg-gray-100 w-8 h-8"
+                >
+                  <p class="text-base text-gray-800 pb-1">ок</p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="flex flex-col items-center justify-between w-full gap-2"
+            >
+              <div
+                class="flex flex-col items-center w-full gap-y-2 p-4 bg-white rounded-xl"
+              >
+                <!-- Сообщение -->
+                <div
+                  class="flex items-center justify-between w-full rounded-lg gap-2 text-sm text-gray-800 px-4 py-2 cursor-pointer"
+                >
+                  <div class="flex items-center gap-2">
+                    <div class="h-8 w-8 gap-2">
+                      <img
+                        src="img/girl12.jpg"
+                        alt="Avatar"
+                        class="h-8 w-8 rounded-full"
+                      />
+                    </div>
+                    <div class="flex flex-col">
+                      <div class="text-sm font-semibold text-gray-800">
+                        <p>Liza Ammi</p>
+                      </div>
+                      <div class="text-sm text-gray-600">
+                        <p>Я хочу познакоми...</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col items-end justify-center gap-2">
+                    <p class="text-gray-500 text-xs">Сегодня</p>
+                    <button class="h-4 w-4 rounded-full">
+                      <img src="img/share.svg" alt="Share" />
+                    </button>
+                  </div>
+                </div>
+                <!-- ┅ Разделитель -->
+                <div
+                  class="border-t border-dashed border-gray-300 w-full"
+                ></div>
+
+                <!-- Сообщение -->
+                <div
+                  class="flex items-center justify-between w-full rounded-xl gap-2 bg-sky-50 blur-1 text-sm text-gray-800 px-4 py-2 cursor-pointer"
+                >
+                  <div class="flex items-center gap-2">
+                    <div class="h-8 w-8 gap-2">
+                      <img
+                        src="img/girl12.jpg"
+                        alt="Avatar"
+                        class="h-8 w-8 rounded-full"
+                      />
+                    </div>
+                    <div class="flex flex-col">
+                      <div class="text-sm font-semibold text-gray-800">
+                        <p>Liza Ammi</p>
+                      </div>
+                      <div class="text-sm text-gray-600">
+                        <p>Я хочу познакоми...</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col items-end justify-center gap-2">
+                    <p class="text-gray-500 text-xs">Сегодня</p>
+                    <button class="h-4 w-4 rounded-full">
+                      <img src="img/share.svg" alt="Share" />
+                    </button>
+                  </div>
+                </div>
+                <!-- ┅ Разделитель -->
+                <div
+                  class="border-t border-dashed border-gray-300 w-full"
+                ></div>
+                <!-- Сообщение -->
+                <div
+                  class="flex items-center justify-between w-full rounded-lg gap-2 text-sm text-gray-800 px-4 py-2 cursor-pointer"
+                >
+                  <div class="flex items-center gap-2">
+                    <div class="h-8 w-8 gap-2">
+                      <img
+                        src="img/girl12.jpg"
+                        alt="Avatar"
+                        class="h-8 w-8 rounded-full"
+                      />
+                    </div>
+                    <div class="flex flex-col">
+                      <div class="text-sm font-semibold text-gray-800">
+                        <p>Liza Ammi</p>
+                      </div>
+                      <div class="text-sm text-gray-600">
+                        <p>Я хочу познакоми...</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col items-end justify-center gap-2">
+                    <p class="text-gray-500 text-xs">Сегодня</p>
+                    <button class="h-4 w-4 rounded-full">
+                      <img src="img/share.svg" alt="Share" />
+                    </button>
+                  </div>
+                </div>
+                <!-- ┅ Разделитель -->
+                <div
+                  class="border-t border-dashed border-gray-300 w-full"
+                ></div>
+                <!-- Сообщение -->
+                <div
+                  class="flex items-center justify-between w-full rounded-lg gap-2 text-sm text-gray-800 px-4 py-2 cursor-pointer"
+                >
+                  <div class="flex items-center gap-2">
+                    <div class="h-8 w-8 gap-2">
+                      <img
+                        src="img/girl12.jpg"
+                        alt="Avatar"
+                        class="h-8 w-8 rounded-full"
+                      />
+                    </div>
+                    <div class="flex flex-col">
+                      <div class="text-sm font-semibold text-gray-800">
+                        <p>Liza Ammi</p>
+                      </div>
+                      <div class="text-sm text-gray-600">
+                        <p>Я хочу познакоми...</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col items-end justify-center gap-2">
+                    <p class="text-gray-500 text-xs">Сегодня</p>
+                    <button class="h-4 w-4 rounded-full">
+                      <img src="img/share.svg" alt="Share" />
+                    </button>
+                  </div>
+                </div>
+                <!-- ┅ Разделитель -->
+                <div
+                  class="border-t border-dashed border-gray-300 w-full"
+                ></div>
+                <!-- Сообщение -->
+                <div
+                  class="flex items-center justify-between w-full rounded-lg gap-2 text-sm text-gray-800 px-4 py-2 cursor-pointer"
+                >
+                  <div class="flex items-center gap-2">
+                    <div class="h-8 w-8 gap-2">
+                      <img
+                        src="img/girl12.jpg"
+                        alt="Avatar"
+                        class="h-8 w-8 rounded-full"
+                      />
+                    </div>
+                    <div class="flex flex-col">
+                      <div class="text-sm font-semibold text-gray-800">
+                        <p>Liza Ammi</p>
+                      </div>
+                      <div class="text-sm text-gray-600">
+                        <p>Я хочу познакоми...</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col items-end justify-center gap-2">
+                    <p class="text-gray-500 text-xs">Сегодня</p>
+                    <button class="h-4 w-4 rounded-full">
+                      <img src="img/share.svg" alt="Share" />
+                    </button>
+                  </div>
+                </div>
+                <!-- ┅ Разделитель -->
+                <div
+                  class="border-t border-dashed border-gray-300 w-full"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

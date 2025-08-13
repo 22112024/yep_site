@@ -9,11 +9,46 @@
       * {
         box-sizing: border-box;
       }
+
+      .shadow-small {
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04),
+          0 -1px 1px rgba(0, 0, 0, 0.04);
+      }
+
+      .hover\:shadow-small:hover {
+        box-shadow: 0 2px 4px rgba(154, 153, 153, 0.1),
+          0 -2px 4px rgba(124, 123, 123, 0.1);
+      }
+
+      .custom-scroll::-webkit-scrollbar {
+        height: 8px;
+        width: 6px;
+      }
+
+      .custom-scroll::-webkit-scrollbar-track {
+        background: transparent;
+        margin-top: 7px;
+        margin-bottom: 7px;
+      }
+
+      .custom-scroll::-webkit-scrollbar-thumb {
+        background-color: #eaeaed;
+        border-radius: 9999px;
+        box-shadow: inset 0 0 0 1px white;
+      }
+
+      .custom-scroll:hover::-webkit-scrollbar-thumb {
+        background-color: #dddddd;
+      }
+
+      .custom-scroll::-webkit-scrollbar-button {
+        display: none;
+      }
     </style>
   </head>
 
   <!-- BODY -->
-  <body class="bg-gray-50 text-gray-800">
+  <body class="bg-gray-100 text-gray-800">
     <!-- HEADER -->
     <header class="p-5 bg-white grid grid-cols-[1fr_auto_1fr] items-center">
       <div class="justify-self-start">
@@ -25,7 +60,7 @@
         class="flex justify-self-center border border-1 border-sky-500 rounded-full space-x-0.5 p-[0.1rem]"
       >
         <button
-          class="flex items-center justify-center h-8 w-14 px-2 py-[0.1rem] text-sm font-medium rounded-full transition shadow bg-sky-500 hover:bg-blue-500 active:bg-blue-500 transition-all duration-200"
+          class="flex items-center justify-center h-8 w-14 px-2 py-[0.1rem] text-sm font-medium rounded-full transition shadow bg-gradient-to-r from-sky-400 via-blue-400 to-indigo-400 hover:bg-blue-500 active:bg-blue-500 transition-all duration-200"
           data-type="pair"
         >
           <img
@@ -46,15 +81,34 @@
         </button>
       </div>
       <div class="flex justify-self-end gap-4">
+        <!-- Главная -->
+        <button
+          class="flex relative inline-block group items-center justify-center border border-1 border-gray-800 rounded-full h-10 w-10 p-1 hover:bg-gray-100"
+          onclick="openFilterMenu()"
+        >
+          <img
+            src="img/main.svg"
+            alt="Account"
+            class="h-[1.1rem] filter brightness-0 saturate-0 opacity-70"
+          />
+          <div
+            class="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-gray-800 text-white text-sm rounded-md px-3 py-1 opacity-0 group-hover:opacity-100 transition pointer-events-none z-10"
+          >
+            Главная
+            <div
+              class="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45"
+            ></div>
+          </div>
+        </button>
         <!-- Аккаунт -->
         <button
-          class="flex relative inline-block group items-center justify-center border border-dashed border-gray-800 rounded-full h-10 w-10 p-1 hover:bg-gray-100"
+          class="flex relative inline-block group items-center justify-center border border-1 border-gray-300 rounded-full h-10 w-10 p-1 hover:border-gray-800"
           onclick="openFilterMenu()"
         >
           <img
             src="img/account.svg"
             alt="Account"
-            class="h-[1rem] filter brightness-0 saturate-0 opacity-70"
+            class="h-[1rem] filter brightness-0 saturate-0 opacity-100"
           />
           <div
             class="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-gray-800 text-white text-sm rounded-md px-3 py-1 opacity-0 group-hover:opacity-100 transition pointer-events-none z-10"
@@ -66,40 +120,38 @@
           </div>
         </button>
         <!-- Сообщение -->
-        <a href="messages.html">
-          <button
-            class="flex relative inline-block group items-center justify-center border border-dashed border-gray-800 rounded-full h-10 w-10 p-1 hover:bg-gray-100"
-            onclick="openFilterMenu()"
+        <button
+          class="flex relative inline-block group items-center justify-center border border-1 border-gray-300 rounded-full h-10 w-10 p-1 hover:border-gray-800"
+          onclick="openFilterMenu()"
+        >
+          <img
+            src="img/messages.svg"
+            alt="Messages"
+            class="h-[0.8rem] filter brightness-0 saturate-0 opacity-100"
+          />
+          <div
+            class="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-gray-800 text-white text-sm rounded-md px-3 py-1 opacity-0 group-hover:opacity-100 transition pointer-events-none z-10"
           >
-            <img
-              src="img/messages.svg"
-              alt="Messages"
-              class="h-[0.8rem] filter brightness-0 saturate-0 opacity-70"
-            />
+            Сообщения
             <div
-              class="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-gray-800 text-white text-sm rounded-md px-3 py-1 opacity-0 group-hover:opacity-100 transition pointer-events-none z-10"
-            >
-              Сообщения
-              <div
-                class="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45"
-              ></div>
-            </div>
-          </button>
-        </a>
+              class="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45"
+            ></div>
+          </div>
+        </button>
         <!-- Мои встречи -->
         <button
-          class="flex relative inline-block group items-center justify-center border border-dashed border-gray-800 rounded-full h-10 w-10 p-1 hover:bg-gray-100"
+          class="flex relative inline-block group items-center justify-center border border-1 border-gray-300 rounded-full h-10 w-10 p-1 hover:border-gray-800"
           onclick="openFilterMenu()"
         >
           <img
             src="img/meets.svg"
             alt="Meetings"
-            class="h-[1.1rem] filter brightness-0 saturate-0 opacity-70"
+            class="h-[1.1rem] filter brightness-0 saturate-0 opacity-100"
           />
           <div
             class="absolute top-full left-1/2 -translate-x-1/2 whitespace-nowrap mt-2 bg-gray-800 text-white text-sm rounded-md px-3 py-1 opacity-0 group-hover:opacity-100 transition pointer-events-none z-10"
           >
-            Мои встречи
+            Мои события
             <div
               class="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45"
             ></div>
@@ -107,13 +159,13 @@
         </button>
         <!-- Создать событие -->
         <button
-          class="flex relative inline-block group items-center justify-center border border-dashed border-gray-800 rounded-full h-10 w-10 p-1 hover:bg-gray-100"
+          class="flex relative inline-block group items-center justify-center border border-1 border-gray-300 rounded-full h-10 w-10 p-1 hover:border-gray-800"
           onclick="openFilterMenu()"
         >
           <img
             src="img/create.svg"
             alt="Create"
-            class="h-[1.1rem] filter brightness-0 saturate-0 opacity-70"
+            class="h-[1.1rem] filter brightness-0 saturate-0 opacity-100"
           />
           <div
             class="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-gray-800 text-white text-sm rounded-md px-3 py-1 opacity-0 group-hover:opacity-100 transition pointer-events-none z-10"
@@ -135,71 +187,442 @@
           class="grid gap-4 rounded-xl w-full 2xl:w-[95%] xl:w-[100%] lg:w-[80%] md:w-[100%] sml:w-[100%]"
         >
           <div
-            class="grid xl:grid-cols-[2fr_2fr_2fr_2fr] sm:grid-cols-2 gap-7 border-dashed border-gray-800 hover:border-gray-400 bg-white px-4 py-4 rounded-lg hover:shadow-sm active:shadow-sm cursor-pointer"
+            class="grid xl:grid-cols-[1fr_1fr_1fr] sm:grid-cols-2 gap-2 rounded-xl"
           >
             <!-- Выбрать город -->
-            <div class="grid relative gap-2">
+            <div
+              class="row-span-2 grid grid-rows-[min-content_1px_minmax(0,1fr)] relative gap-3 bg-white rounded-2xl border px-7 py-7 max-h-[370px]"
+            >
               <!-- Верхний блок -->
               <div
-                class="grid grid-cols-[1fr_auto_1fr] items-center justify-between gap-2 bg-sky-50 rounded-lg px-4 py-1 min-w-[14rem]"
+                class="grid grid-cols-[1fr_auto_1fr] items-center justify-between gap-2 rounded-lg min-w-[14rem] px-2 py-1 bg-gradient-to-r from-sky-400 via-blue-400 to-indigo-400"
               >
                 <img
                   src="img/location_white.svg"
                   alt="City"
-                  class="h-8 w-8 p-1.5 bg-sky-500 border border-dashed border-sky-500 rounded-full"
+                  class="h-8 w-8 p-1.5"
                 />
-                <p class="text-sm text-sky-500 font-semibold">Выбрать город</p>
+                <p class="text-[15px] text-white font-semibold">
+                  Выбрать город
+                </p>
                 <img
-                  src="img/line&circle.svg"
+                  src="img/arrow_down.svg"
                   alt="Arrow"
                   class="flex h-5 w-5 justify-self-end"
                 />
               </div>
-              <!-- Линия -->
-              <div class="h-px bg-gray-300 mx-4"></div>
-              <!-- Нижний блок -->
-              <div class="flex items-center justify-between gap-2 pl-4 pr-2">
-                <div class="flex items-center gap-2">
-                  <p
-                    class="text-sm text-gray-800 border border-dashed border-gray-800 rounded-full px-2 py-1.5 cursor-pointer bg-sky-50 hover:bg-sky-50 active:bg-sky-50"
-                  >
-                    Москва
-                  </p>
-                  <p
-                    class="text-sm text-gray-800 border border-dashed border-gray-800 rounded-full px-2 py-1.5 cursor-pointer hover:bg-gray-50 active:bg-gray-50"
-                  >
-                    Санкт-Петербург
-                  </p>
-                </div>
-                <div class="relative inline-block group">
-                  <div
-                    class="p-[0.8rem] border border-dashed border-gray-800 rounded-full hover:bg-gray-50 active:bg-gray-50 cursor-pointer"
-                  >
-                    <img
-                      src="img/arrow_bottom.svg"
-                      alt="Arrow"
-                      class="h-2 w-2 filter brightness-0 saturate-0 opacity-70"
-                    />
-                  </div>
-                  <!-- Меню поиска -->
-                  <div
-                    class="absolute top-full right-0 -translate-x-1 mt-2 w-64 max-h-50 bg-white shadow-lg rounded-xl border border-gray-200 z-20 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-200"
-                  >
-                    <div
-                      class="absolute -top-1 right-1 -translate-x-1/2 w-2 h-2 bg-white border-l border-t border-dashed border-gray-300 rotate-45"
-                    ></div>
-                    <div
-                      class="flex items-center justify-between w-[90%] text-sm text-gray-800 gap-1 m-3"
+              <div class="border-t border-gray-300 border-dashed"></div>
+              <!-- Нижние блоки -->
+              <div
+                class="flex flex-1 flex-col justify-between gap-5 max-h-full overflow-hidden"
+              >
+                <!-- Нижний блок -->
+                <div class="flex items-center justify-between gap-2">
+                  <div class="flex items-center gap-2">
+                    <p
+                      class="text-sm text-gray-800 border border-1 border-gray-800 rounded-full px-2 py-1.5 cursor-pointer hover:border-gray-300 active:shadow-small"
                     >
-                      <input
-                        type="text"
-                        placeholder="Сменить город"
-                        class="text-sm text-gray-800 bg-transparent outline-none flex-1 p-1 pl-3 placeholder-gray-400 border border-dashed border-gray-800 rounded-full"
-                      />
+                      Москва
+                    </p>
+                  </div>
+                  <div class="relative inline-block group">
+                    <!-- Поиск -->
+                    <div class="flex items-center w-full rounded-xl">
+                      <div class="flex items-center w-full">
+                        <div
+                          class="flex items-center justify-between w-[100%] text-sm text-gray-800 bg-gray-100 border border-1 border-gray-300 rounded-full rounded-full gap-1"
+                        >
+                          <input
+                            type="text"
+                            placeholder="Найти"
+                            class="text-sm text-grey-800 bg-transparent outline-none flex-1 p-1 pl-3 placeholder-gray-400"
+                          />
+                          <button
+                            class="flex items-center justify-center h-8 w-14 px-2 py-[0.1rem] text-sm font-medium rounded-full transition bg-white hover:bg-blue-500 active:bg-blue-500 transition-all duration-200"
+                            data-type="pair"
+                          >
+                            <img
+                              src="img/location_dark.svg"
+                              alt="Pair"
+                              class="h-4 whitescale brightness-10"
+                            />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex relative items-center rounded-xl overflow-hidden group aspect-[4/4]"
+                >
+                  <img
+                    src="img/map.png"
+                    alt="Map"
+                    class="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div class="absolute inset-0 bg-white/40"></div>
+                  <div
+                    class="absolute top-1/2 left-1/2 bg-white rounded-2xl -translate-x-1/2 -translate-y-1/2 p-2 whitespace-nowrap shadow-md cursor-pointer"
+                  >
+                    <p class="text-gray-600 text-sm">События на карте</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="row-span-2 grid grid-rows-[min-content_1px_minmax(0,1fr)] relative gap-3 bg-white rounded-2xl border px-7 py-7 max-h-[370px]"
+            >
+              <!-- Верхний блок -->
+              <div
+                class="grid grid-cols-[1fr_auto_1fr] items-center justify-between gap-2 rounded-lg min-w-[14rem] px-2 py-1 bg-gradient-to-r from-sky-400 via-blue-400 to-indigo-400"
+              >
+                <img
+                  src="img/location_white.svg"
+                  alt="City"
+                  class="h-8 w-8 p-1.5"
+                />
+                <p class="text-[15px] text-white font-semibold">
+                  Выбрать событие
+                </p>
+                <img
+                  src="img/arrow_down.svg"
+                  alt="Arrow"
+                  class="flex h-5 w-5 justify-self-end"
+                />
+              </div>
+              <div class="w-full border-t border-dashed border-gray-300"></div>
+              <!-- Нижние блоки -->
+              <div
+                class="flex flex-1 flex-col justify-between gap-2 overflow-y-auto custom-scroll max-h-full"
+              >
+                <!-- Нижний блок - выбранное событие -->
+                <div class="flex items-center gap-2">
+                  <div class="flex items-center gap-2">
+                    <div class="relative group inline-block">
                       <div
-                        class="flex items-center justify-center rounded-full cursor-pointer hover:bg-gray-100 active:bg-gray-100 w-8 h-8"
+                        class="flex gap-2 items-center px-2 py-1.5 border border-1 border-gray-800 rounded-full hover:shadow-small active:shadow-small cursor-pointer"
                       >
-                        <p class="text-base text-gray-800 pb-1">ок</p>
+                        <img
+                          src="img/crown.svg"
+                          alt="Arrow"
+                          class="h-4 w-4 filter brightness-0 saturate-0 opacity-70"
+                        />
+                        <p class="text-gray-600 text-sm">Авторское событие</p>
+                      </div>
+                      <div
+                        class="absolute top-full left-[105%] -translate-x-1/2 mt-2 bg-gray-800 text-white text-sm whitespace-nowrap rounded-md px-3 py-1 opacity-0 group-hover:opacity-100 transition pointer-events-none z-10"
+                      >
+                        Создаются креативные события пользователями
+                        <div
+                          class="absolute -top-1 left-2/2 -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Нижний блок - развлечения -->
+                <div class="flex items-center justify-between gap-2">
+                  <div class="flex flex-col items-start gap-2">
+                    <div class="flex">
+                      <p class="text-sm text-gray-800 font-semibold">
+                        Развлечения
+                      </p>
+                    </div>
+                    <div class="flex gap-2">
+                      <!-- Ресторан -->
+                      <div class="relative group inline-block">
+                        <div
+                          class="p-[0.59rem] border border-1 border-gray-300 rounded-full hover:border-gray-800 active:border-gray-800 cursor-pointer"
+                        >
+                          <img
+                            src="img/restaurant.svg"
+                            alt="Arrow"
+                            class="h-5 w-5 filter brightness-0 saturate-0 opacity-70"
+                          />
+                        </div>
+                        <div
+                          class="absolute top-full left-[120%] -translate-x-1/2 mt-2 bg-gray-800 text-white text-sm rounded-md px-3 py-1 opacity-0 group-hover:opacity-100 transition pointer-events-none z-10"
+                        >
+                          Ресторан
+                          <div
+                            class="absolute -top-1 left-2/2 -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45"
+                          ></div>
+                        </div>
+                      </div>
+
+                      <!-- Кафе -->
+                      <div class="relative group inline-block">
+                        <div
+                          class="p-[0.59rem] border border-1 border-gray-300 rounded-full hover:border-gray-800 active:border-gray-800 cursor-pointer"
+                        >
+                          <img
+                            src="img/cafe.svg"
+                            alt="Arrow"
+                            class="h-5 w-5 filter brightness-0 saturate-0 opacity-70"
+                          />
+                        </div>
+                        <div
+                          class="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-gray-800 text-white text-sm rounded-md px-3 py-1 opacity-0 group-hover:opacity-100 transition pointer-events-none z-10"
+                        >
+                          Кафе
+                          <div
+                            class="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45"
+                          ></div>
+                        </div>
+                      </div>
+
+                      <!-- Бар -->
+                      <div class="relative group inline-block">
+                        <div
+                          class="p-[0.59rem] border border-1 border-gray-300 rounded-full hover:border-gray-800 active:border-gray-800 cursor-pointer"
+                        >
+                          <img
+                            src="img/bar.svg"
+                            alt="Arrow"
+                            class="h-5 w-5 filter brightness-0 saturate-0 opacity-70"
+                          />
+                        </div>
+                        <div
+                          class="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-gray-800 text-white text-sm rounded-md px-3 py-1 opacity-0 group-hover:opacity-100 transition pointer-events-none z-10"
+                        >
+                          Бар
+                          <div
+                            class="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45"
+                          ></div>
+                        </div>
+                      </div>
+                      <!-- Клуб -->
+                      <div class="relative group inline-block">
+                        <div
+                          class="p-[0.59rem] border border-1 border-gray-300 rounded-full hover:border-gray-800 active:border-gray-800 cursor-pointer"
+                        >
+                          <img
+                            src="img/club.svg"
+                            alt="Arrow"
+                            class="h-5 w-5 filter brightness-0 saturate-0 opacity-70"
+                          />
+                        </div>
+                        <div
+                          class="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-gray-800 text-white text-sm rounded-md px-3 py-1 opacity-0 group-hover:opacity-100 transition pointer-events-none z-10"
+                        >
+                          Клуб
+                          <div
+                            class="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45"
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Нижний блок - исскуство -->
+                <div class="flex items-center justify-between gap-2">
+                  <div class="flex flex-col items-start gap-2">
+                    <div class="flex">
+                      <p class="text-sm text-gray-800 font-semibold">
+                        Искусство
+                      </p>
+                    </div>
+                    <div class="flex gap-2">
+                      <!-- Кинотеатр -->
+                      <div class="relative group inline-block">
+                        <div
+                          class="p-[0.59rem] border border-1 border-gray-300 rounded-full hover:border-gray-800 active:border-gray-800 cursor-pointer"
+                        >
+                          <img
+                            src="img/cinema.svg"
+                            alt="Arrow"
+                            class="h-5 w-5 filter brightness-0 saturate-0 opacity-70"
+                          />
+                        </div>
+                        <div
+                          class="absolute top-full left-[130%] -translate-x-1/2 mt-2 bg-gray-800 text-white text-sm rounded-md px-3 py-1 opacity-0 group-hover:opacity-100 transition pointer-events-none z-10"
+                        >
+                          Кинотеатр
+                          <div
+                            class="absolute -top-1 left-2/2 -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45"
+                          ></div>
+                        </div>
+                      </div>
+
+                      <!-- Театр -->
+                      <div class="relative group inline-block">
+                        <div
+                          class="p-[0.59rem] border border-1 border-gray-300 rounded-full hover:border-gray-800 active:border-gray-800 cursor-pointer"
+                        >
+                          <img
+                            src="img/theatre.svg"
+                            alt="Arrow"
+                            class="h-5 w-5 filter brightness-0 saturate-0 opacity-70"
+                          />
+                        </div>
+                        <div
+                          class="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-gray-800 text-white text-sm rounded-md px-3 py-1 opacity-0 group-hover:opacity-100 transition pointer-events-none z-10"
+                        >
+                          Театр
+                          <div
+                            class="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45"
+                          ></div>
+                        </div>
+                      </div>
+
+                      <!-- Выставка -->
+                      <div class="relative group inline-block">
+                        <div
+                          class="p-[0.59rem] border border-1 border-gray-300 rounded-full hover:border-gray-800 active:border-gray-800 cursor-pointer"
+                        >
+                          <img
+                            src="img/exhibition.svg"
+                            alt="Arrow"
+                            class="h-5 w-5 filter brightness-0 saturate-0 opacity-70"
+                          />
+                        </div>
+                        <div
+                          class="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-gray-800 text-white text-sm rounded-md px-3 py-1 opacity-0 group-hover:opacity-100 transition pointer-events-none z-10"
+                        >
+                          Выставка
+                          <div
+                            class="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45"
+                          ></div>
+                        </div>
+                      </div>
+
+                      <!-- Концерт -->
+                      <div class="relative group inline-block">
+                        <div
+                          class="p-[0.59rem] border border-1 border-gray-300 rounded-full hover:border-gray-800 active:border-gray-800 cursor-pointer"
+                        >
+                          <img
+                            src="img/concert.svg"
+                            alt="Arrow"
+                            class="h-5 w-5 filter brightness-0 saturate-0 opacity-70"
+                          />
+                        </div>
+                        <div
+                          class="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-gray-800 text-white text-sm rounded-md px-3 py-1 opacity-0 group-hover:opacity-100 transition pointer-events-none z-10"
+                        >
+                          Концерт
+                          <div
+                            class="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45"
+                          ></div>
+                        </div>
+                      </div>
+
+                      <!-- Музей -->
+                      <div class="relative group inline-block">
+                        <div
+                          class="p-[0.59rem] border border-1 border-gray-300 rounded-full hover:border-gray-800 active:border-gray-800 cursor-pointer"
+                        >
+                          <img
+                            src="img/museum.svg"
+                            alt="Arrow"
+                            class="h-5 w-5 filter brightness-0 saturate-0 opacity-70"
+                          />
+                        </div>
+                        <div
+                          class="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-gray-800 text-white text-sm rounded-md px-3 py-1 opacity-0 group-hover:opacity-100 transition pointer-events-none z-10"
+                        >
+                          Музей
+                          <div
+                            class="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45"
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Нижний блок - спорт -->
+                <div class="flex items-center justify-between gap-2">
+                  <div class="flex flex-col items-start gap-2">
+                    <div class="flex">
+                      <p class="text-sm text-gray-800 font-semibold">Спорт</p>
+                    </div>
+                    <div class="flex gap-2">
+                      <!-- Велопрогулка -->
+                      <div class="relative group inline-block">
+                        <div
+                          class="p-[0.59rem] border border-1 border-gray-300 rounded-full hover:border-gray-800 active:border-gray-800 cursor-pointer"
+                        >
+                          <img
+                            src="img/bike.svg"
+                            alt="Arrow"
+                            class="h-5 w-5 filter brightness-0 saturate-0 opacity-70"
+                          />
+                        </div>
+                        <div
+                          class="absolute top-full left-[160%] -translate-x-1/2 mt-2 bg-gray-800 text-white text-sm rounded-md px-3 py-1 opacity-0 group-hover:opacity-100 transition pointer-events-none z-10"
+                        >
+                          Велопрогулка
+                          <div
+                            class="absolute -top-1 left-2/2 -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45"
+                          ></div>
+                        </div>
+                      </div>
+
+                      <!-- Пробежка -->
+                      <div class="relative group inline-block">
+                        <div
+                          class="p-[0.59rem] border border-1 border-gray-300 rounded-full hover:border-gray-800 active:border-gray-800 cursor-pointer"
+                        >
+                          <img
+                            src="img/jogging.svg"
+                            alt="Arrow"
+                            class="h-5 w-5 filter brightness-0 saturate-0 opacity-70"
+                          />
+                        </div>
+                        <div
+                          class="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-gray-800 text-white text-sm rounded-md px-3 py-1 opacity-0 group-hover:opacity-100 transition pointer-events-none z-10"
+                        >
+                          Пробежка
+                          <div
+                            class="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45"
+                          ></div>
+                        </div>
+                      </div>
+
+                      <!-- Сноубординг -->
+                      <div class="relative group inline-block">
+                        <div
+                          class="p-[0.59rem] border border-1 border-gray-300 rounded-full hover:border-gray-800 active:border-gray-800 cursor-pointer"
+                        >
+                          <img
+                            src="img/snowboarding.svg"
+                            alt="Arrow"
+                            class="h-5 w-5 filter brightness-0 saturate-0 opacity-70"
+                          />
+                        </div>
+                        <div
+                          class="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-gray-800 text-white text-sm rounded-md px-3 py-1 opacity-0 group-hover:opacity-100 transition pointer-events-none z-10"
+                        >
+                          Сноубординг
+                          <div
+                            class="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45"
+                          ></div>
+                        </div>
+                      </div>
+
+                      <!-- Катание на коньках -->
+                      <div class="relative group inline-block">
+                        <div
+                          class="p-[0.59rem] border border-1 border-gray-300 rounded-full hover:border-gray-800 active:border-gray-800 cursor-pointer"
+                        >
+                          <img
+                            src="img/ice_skating.svg"
+                            alt="Arrow"
+                            class="h-5 w-5 filter brightness-0 saturate-0 opacity-70"
+                          />
+                        </div>
+                        <div
+                          class="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-gray-800 text-white text-sm rounded-md px-3 py-1 opacity-0 group-hover:opacity-100 transition pointer-events-none z-10"
+                        >
+                          Катание на коньках
+                          <div
+                            class="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45"
+                          ></div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -207,279 +630,42 @@
               </div>
             </div>
 
-            <!-- Выбрать событие -->
-            <div class="grid gap-2">
-              <!-- Верхний блок -->
-              <div
-                class="grid grid-cols-[auto_1fr_auto] items-center gap-2 bg-sky-50 rounded-lg px-4 py-1 min-w-[14rem]"
-              >
-                <img
-                  src="img/event.svg"
-                  alt="City"
-                  class="h-8 w-8 p-1.5 bg-sky-500 border border-dashed border-sky-500 rounded-full"
-                />
-                <p class="text-sm text-sky-500 font-semibold">
-                  Выбрать событие
-                </p>
-                <img src="img/line&circle.svg" alt="Arrow" class="h-5 w-5" />
-              </div>
-              <!-- Линия -->
-              <div class="h-px bg-gray-300 mx-4"></div>
-              <!-- Нижний блок -->
-              <div class="flex items-center justify-between gap-2 pl-4 pr-2">
-                <div class="flex items-center gap-2">
-                  <!-- Создать событие -->
-                  <div class="relative group inline-block">
-                    <div
-                      class="p-[0.59rem] border border-dashed border-gray-800 rounded-full bg-sky-50 hover:bg-sky-50 active:bg-sky-50 cursor-pointer"
-                    >
-                      <img
-                        src="img/crown.svg"
-                        alt="Arrow"
-                        class="h-4 w-4 filter brightness-0 saturate-0 opacity-70"
-                      />
-                    </div>
-                    <div
-                      class="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-gray-800 text-white text-sm whitespace-nowrap rounded-md px-3 py-1 opacity-0 group-hover:opacity-100 transition pointer-events-none z-10"
-                    >
-                      Авторские события
-                      <div
-                        class="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45"
-                      ></div>
-                    </div>
-                  </div>
-
-                  <!-- Ресторан -->
-                  <div class="relative group inline-block">
-                    <div
-                      class="p-[0.59rem] border border-dashed border-gray-800 rounded-full bg-gray-50 hover:bg-gray-50 active:bg-gray-50 cursor-pointer"
-                    >
-                      <img
-                        src="img/restaurant.svg"
-                        alt="Arrow"
-                        class="h-4 w-4 filter brightness-0 saturate-0 opacity-70"
-                      />
-                    </div>
-                    <div
-                      class="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-gray-800 text-white text-sm rounded-md px-3 py-1 opacity-0 group-hover:opacity-100 transition pointer-events-none z-10"
-                    >
-                      Ресторан
-                      <div
-                        class="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45"
-                      ></div>
-                    </div>
-                  </div>
-
-                  <!-- Кафе -->
-                  <div class="relative group inline-block">
-                    <div
-                      class="p-[0.59rem] border border-dashed border-gray-800 rounded-full hover:bg-gray-100 active:bg-gray-100 cursor-pointer"
-                    >
-                      <img
-                        src="img/cafe.svg"
-                        alt="Arrow"
-                        class="h-4 w-4 filter brightness-0 saturate-0 opacity-70"
-                      />
-                    </div>
-                    <div
-                      class="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-gray-800 text-white text-sm rounded-md px-3 py-1 opacity-0 group-hover:opacity-100 transition pointer-events-none z-10"
-                    >
-                      Кафе
-                      <div
-                        class="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45"
-                      ></div>
-                    </div>
-                  </div>
-
-                  <!-- Бар -->
-                  <div class="relative group inline-block">
-                    <div
-                      class="p-[0.59rem] border border-dashed border-gray-800 rounded-full hover:bg-gray-100 active:bg-gray-100 cursor-pointer"
-                    >
-                      <img
-                        src="img/bar.svg"
-                        alt="Arrow"
-                        class="h-4 w-4 filter brightness-0 saturate-0 opacity-70"
-                      />
-                    </div>
-                    <div
-                      class="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-gray-800 text-white text-sm rounded-md px-3 py-1 opacity-0 group-hover:opacity-100 transition pointer-events-none z-10"
-                    >
-                      Бар
-                      <div
-                        class="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45"
-                      ></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="relative inline-block group">
-                  <!-- Кнопка -->
-                  <div
-                    class="p-[0.8rem] border border-dashed border-gray-800 rounded-full hover:bg-gray-100 active:bg-gray-100 cursor-pointer"
-                  >
-                    <img
-                      src="img/arrow_bottom.svg"
-                      alt="Arrow"
-                      class="h-2 w-2 filter brightness-0 saturate-0 opacity-70"
-                    />
-                  </div>
-
-                  <!-- Меню -->
-                  <div
-                    class="absolute top-full right-0 -translate-x-1 mt-2 w-[14rem] max-h-48 overflow-y-scroll bg-white shadow-lg rounded-xl border border-gray-200 z-20 opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-200"
-                  >
-                    <div
-                      class="absolute -top-1 right-1 -translate-x-1/2 w-2 h-2 bg-white border-l border-t border-1 border-gray-300 rotate-45"
-                    ></div>
-                    <ul class="py-2 text-sm text-gray-700">
-                      <!-- Театр -->
-
-                      <li
-                        class="flex items-center gap-2 px-6 py-2 hover:bg-gray-100 cursor-pointer"
-                      >
-                        <img
-                          src="img/theatre.svg"
-                          alt="Arrow"
-                          class="h-4 w-4 filter brightness-0 saturate-0 opacity-70"
-                        />
-                        <p>Театр</p>
-                      </li>
-                      <!-- Линия -->
-                      <div
-                        class="border border-dashed border-gray-200 mx-3 my-1"
-                      ></div>
-
-                      <!-- Музей -->
-
-                      <li
-                        class="flex items-center gap-2 px-6 py-2 hover:bg-gray-100 cursor-pointer"
-                      >
-                        <img
-                          src="img/museum.svg"
-                          alt="Arrow"
-                          class="h-4 w-4 filter brightness-0 saturate-0 opacity-70"
-                        />
-                        <p>Музей</p>
-                      </li>
-                      <!-- Линия -->
-                      <div
-                        class="border border-dashed border-gray-200 mx-3 my-1"
-                      ></div>
-                      <!-- Концерт -->
-
-                      <li
-                        class="flex items-center gap-2 px-6 py-2 hover:bg-gray-100 cursor-pointer"
-                      >
-                        <img
-                          src="img/concert.svg"
-                          alt="Arrow"
-                          class="h-4 w-4 filter brightness-0 saturate-0 opacity-70"
-                        />
-                        <p>Концерт</p>
-                      </li>
-                      <!-- Линия -->
-                      <div
-                        class="border border-dashed border-gray-200 mx-3 my-1"
-                      ></div>
-                      <!-- Клуб -->
-
-                      <li
-                        class="flex items-center gap-2 px-6 py-2 hover:bg-gray-100 cursor-pointer"
-                      >
-                        <img
-                          src="img/club.svg"
-                          alt="Arrow"
-                          class="h-4 w-4 filter brightness-0 saturate-0 opacity-70"
-                        />
-                        <p>Клуб</p>
-                      </li>
-                      <!-- Линия -->
-                      <div
-                        class="border border-dashed border-gray-200 mx-3 my-1"
-                      ></div>
-                      <!-- Велопрогулка -->
-
-                      <li
-                        class="flex items-center gap-2 px-6 py-2 hover:bg-gray-100 cursor-pointer"
-                      >
-                        <img
-                          src="img/bike.svg"
-                          alt="Arrow"
-                          class="h-4 w-4 filter brightness-0 saturate-0 opacity-70"
-                        />
-                        <p>Велопрогулка</p>
-                      </li>
-                      <!-- Линия -->
-                      <div
-                        class="border border-dashed border-gray-200 mx-3 my-1"
-                      ></div>
-                      <!-- Спорт -->
-
-                      <li
-                        class="flex items-center gap-2 px-6 py-2 hover:bg-gray-100 cursor-pointer"
-                      >
-                        <img
-                          src="img/sport.svg"
-                          alt="Arrow"
-                          class="h-4 w-4 filter brightness-0 saturate-0 opacity-70"
-                        />
-                        <p>Спорт</p>
-                      </li>
-                      <!-- Линия -->
-                      <div
-                        class="border border-dashed border-gray-200 mx-3 my-1"
-                      ></div>
-                      <!-- Настольные игры -->
-
-                      <li
-                        class="flex items-center gap-2 px-6 py-2 hover:bg-gray-100 cursor-pointer"
-                      >
-                        <img
-                          src="img/board_games.svg"
-                          alt="Arrow"
-                          class="h-4 w-4 filter brightness-0 saturate-0 opacity-70"
-                        />
-                        <p>Настольные игры</p>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
             <!-- Выбрать дату -->
-            <div class="relative grid gap-2">
+            <div
+              class="grid relative grid-rows-[min-content_1px_minmax(0,1fr)] gap-3 bg-white rounded-2xl px-4 py-7 border"
+            >
               <!-- Верхний блок -->
               <div
-                class="grid grid-cols-[auto_1fr_auto] items-center gap-2 bg-sky-50 rounded-lg px-4 py-1 min-w-[14rem]"
+                class="grid grid-cols-[1fr_auto_1fr] items-center justify-between gap-2 rounded-lg min-w-[14rem] px-2 py-1 bg-gradient-to-r from-sky-400 via-blue-400 to-indigo-400"
               >
                 <img
-                  src="img/date.svg"
+                  src="img/location_white.svg"
                   alt="City"
-                  class="h-8 w-8 p-1.5 bg-sky-500 border border-dashed border-sky-500 rounded-full"
+                  class="h-8 w-8 p-1.5"
                 />
-                <p class="text-sm text-sky-500 font-semibold">Выбрать дату</p>
-                <img src="img/line&circle.svg" alt="Arrow" class="h-5 w-5" />
+                <p class="text-[15px] text-white font-semibold">Выбрать дату</p>
+                <img
+                  src="img/arrow_down.svg"
+                  alt="Arrow"
+                  class="flex h-5 w-5 justify-self-end"
+                />
               </div>
-
-              <!-- Линия -->
-              <div class="h-px bg-gray-300 mx-4"></div>
-
+              <div class="border-t border-gray-300 border-dashed"></div>
               <!-- Нижний блок -->
               <div class="flex items-center justify-between gap-2 pl-4 pr-2">
                 <div class="flex items-center gap-2">
                   <p
-                    class="text-sm text-gray-800 border border-dashed border-gray-800 rounded-full px-2 py-1.5 cursor-pointer bg-sky-50 hover:bg-sky-50 active:bg-sky-50"
+                    class="text-sm text-gray-800 border border-1 border-gray-800 rounded-full px-2 py-1.5 cursor-pointer hover:shadow-small"
                   >
                     Сегодня
                   </p>
                   <p
-                    class="text-sm text-gray-800 border border-dashed border-gray-800 rounded-full px-2 py-1.5 cursor-pointer hover:bg-gray-100 active:bg-gray-1000"
+                    class="text-sm text-gray-800 bg-gray-100 border border-1 border-gray-300 rounded-full px-2 py-1.5 cursor-pointer hover:border-gray-800 active:border-gray-800"
                   >
                     Завтра
                   </p>
                   <p
-                    class="text-sm text-gray-800 border border-dashed border-gray-800 rounded-full px-2 py-1.5 cursor-pointer hover:bg-gray-100 active:bg-sgray-100"
+                    class="text-sm text-gray-800 bg-gray-100 border border-1 border-gray-300 rounded-full px-2 py-1.5 cursor-pointer hover:border-gray-800 active:border-gray-800"
                   >
                     Неделя
                   </p>
@@ -487,13 +673,13 @@
 
                 <!-- Контейнер иконки календаря-->
                 <div
-                  class="relative group p-[0.55rem] border border-dashed border-gray-800 rounded-full hover:bg-gray-100 active:bg-gray-100 cursor-pointer"
+                  class="relative group p-[0.55rem] border border-1 border-gray-300 rounded-full hover:border-gray-800 active:border-gray-800 cursor-pointer"
                 >
                   <!-- Иконка -->
                   <img
                     src="img/calendar.svg"
                     alt="Календарь"
-                    class="h-4 w-4 filter brightness-0 saturate-0 opacity-80"
+                    class="h-5 w-5 filter brightness-0 saturate-0 opacity-80"
                   />
 
                   <!-- Выпадающий календарь -->
@@ -507,7 +693,7 @@
 
                     <!-- Заголовок месяца -->
                     <div
-                      class="flex items-center justify-between px-4 py-3 border-b border-dashed border-gray-200"
+                      class="flex items-center justify-between px-4 py-3 border border-1 border-gray-200"
                     >
                       <button class="text-gray-500 hover:text-black">
                         &lt;
@@ -718,24 +904,29 @@
               </div>
             </div>
 
-            <!-- Выбратьвозраст и пол -->
-            <div class="grid gap-2">
+            <!-- Выбрать возвраст и пол -->
+            <div
+              class="grid relative grid-rows-[min-content_1px_minmax(0,1fr)] gap-3 bg-white rounded-2xl px-4 py-7 border"
+            >
               <!-- Верхний блок -->
               <div
-                class="grid grid-cols-[auto_1fr_auto] items-center gap-2 bg-sky-50 rounded-lg px-4 py-1 min-w-[14rem]"
+                class="grid grid-cols-[1fr_auto_1fr] items-center justify-between gap-2 rounded-lg min-w-[14rem] px-2 py-1 bg-gradient-to-r from-sky-400 via-blue-400 to-indigo-400"
               >
                 <img
-                  src="img/sex&age.svg"
+                  src="img/location_white.svg"
                   alt="City"
-                  class="h-8 w-8 p-1.5 bg-sky-500 border border-dashed border-sky-500 rounded-full"
+                  class="h-8 w-8 p-1.5"
                 />
-                <p class="text-sm text-sky-500 font-semibold">
+                <p class="text-[15px] text-white font-semibold">
                   Выбрать возраст и пол
                 </p>
-                <img src="img/line&circle.svg" alt="Arrow" class="h-5 w-5" />
+                <img
+                  src="img/arrow_down.svg"
+                  alt="Arrow"
+                  class="flex h-5 w-5 justify-self-end"
+                />
               </div>
-              <!-- Линия -->
-              <div class="h-px bg-gray-300 mx-4"></div>
+              <div class="border-t border-gray-300 border-dashed"></div>
               <!-- Нижний блок -->
               <div class="flex items-center justify-between gap-4 pl-4 pr-2">
                 <div class="flex items-center gap-2">
@@ -743,7 +934,7 @@
                   <div class="relative">
                     <select
                       id="ageFrom"
-                      class="text-sm text-gray-800 border border-dashed border-gray-800 rounded-full px-4 py-1.5 hover:bg-gray-100 active:bg-gray-100 cursor-pointer appearance-none pr-8 max-h-40 overflow-y-auto focus:outline-none focus:border-gray-600 focus:ring-0"
+                      class="text-sm text-gray-800 bg-gray-100 border border-1 border-gray-300 rounded-lg px-4 py-1.5 hover:border-gray-800 active:border-gray-800 cursor-pointer appearance-none pr-8 max-h-40 overflow-y-auto focus:outline-none focus:border-gray-800 focus:ring-0"
                     >
                       <option disabled selected>От</option>
                     </select>
@@ -771,7 +962,7 @@
                   <div class="relative">
                     <select
                       id="ageFrom"
-                      class="text-sm text-gray-800 border border-dashed border-gray-800 rounded-full px-4 py-1.5 hover:bg-gray-100 active:bg-gray-100 cursor-pointer appearance-none pr-8 max-h-40 overflow-y-auto focus:outline-none focus:border-gray-600 focus:ring-0"
+                      class="text-sm text-gray-800 bg-gray-100 border border-1 border-gray-300 rounded-full px-4 py-1.5 hover:border-gray-800 active:border-gray-800 cursor-pointer appearance-none pr-8 max-h-40 overflow-y-auto focus:outline-none focus:border-gray-800 focus:ring-0"
                     >
                       <option disabled selected>До</option>
                     </select>
@@ -797,12 +988,12 @@
                 <!-- Пол -->
                 <div class="flex items-center gap-2">
                   <p
-                    class="text-sm text-gray-800 border border-dashed border-gray-800 rounded-full px-[0.67rem] py-[0.42rem] cursor-pointer bg-sky-50 hover:bg-sky-50 active:bg-sky-50"
+                    class="text-sm text-gray-800 bg-gray-100 border border-1 border-gray-300 rounded-full px-[0.7rem] py-[0.5rem] cursor-pointer hover:border-gray-800 active:border-gray-800"
                   >
                     М
                   </p>
                   <p
-                    class="text-sm text-gray-800 border border-dashed border-gray-800 rounded-full px-[0.67rem] py-[0.42rem] cursor-pointer hover:bg-gray-100 active:bg-gray-100"
+                    class="text-sm text-gray-800 border border-1 border-gray-800 rounded-full px-[0.7rem] py-[0.5rem] cursor-pointer hover:shadow-small hover:border-gray-800 active:border-gray-800"
                   >
                     Ж
                   </p>
@@ -815,28 +1006,44 @@
 
       <!-- Поиск -->
       <div
-        class="flex place-items-center items-center justify-center gap-4 rounded-lg min-w-[9rem]"
+        class="flex items-center justify-between w-full rounded-lg min-w-[9rem]"
       >
-        <button
-          class="flex items-center justify-center rounded-full h-9 min-w-[9rem] border-[0.09rem] border-gray-800 hover:border-gray-400 active:border-gray-400 transition-all duration-200 text-white px-4"
-        >
-          <span class="text-sm font-semibold text-gray-800">Поиск</span>
-        </button>
-        <!-- Создать событие -->
-        <div class="relative group inline-block">
+        <!-- Пустой элемент-заглушка для выравнивания -->
+        <div class="w-20"></div>
+
+        <!-- Поиск -->
+        <div class="flex items-center gap-4">
           <button
-            class="flex items-center justify-center rounded-full h-9 w-9 border-[0.09rem] border-gray-800 hover:border-gray-400 active:border-gray-400 transition-all duration-200 text-white px-2"
+            class="flex items-center justify-center rounded-full h-9 min-w-[9rem] border-[0.09rem] border-gray-800 hover:border-gray-400 active:border-gray-400 transition-all duration-200 text-white px-4"
           >
-            <img src="img/create.svg" alt="Create" />
+            <span class="text-sm font-semibold text-gray-800">Поиск</span>
           </button>
-          <div
-            class="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-gray-800 text-white text-sm whitespace-nowrap rounded-md px-3 py-1 opacity-0 group-hover:opacity-100 transition pointer-events-none z-10"
-          >
-            Создать событие
+
+          <!-- Создать событие -->
+          <div class="relative group inline-block">
+            <button
+              class="flex items-center justify-center rounded-full h-9 w-9 border-[0.09rem] border-gray-800 hover:border-gray-400 active:border-gray-400 transition-all duration-200 text-white px-2"
+            >
+              <img src="img/create.svg" alt="Create" />
+            </button>
             <div
-              class="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45"
-            ></div>
+              class="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-gray-800 text-white text-sm whitespace-nowrap rounded-md px-3 py-1 opacity-0 group-hover:opacity-100 transition pointer-events-none z-10"
+            >
+              Создать событие
+              <div
+                class="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45"
+              ></div>
+            </div>
           </div>
+        </div>
+
+        <!-- Расширенный поиск -->
+        <div class="flex items-end">
+          <a href="#">
+            <p class="text-sm text-gray-600 font-semibold underline">
+              Расширенный поиск
+            </p>
+          </a>
         </div>
       </div>
 
@@ -848,12 +1055,11 @@
           <div
             class="relative bg-white p-4 rounded-xl shadow-sd hover:shadow-md active:shadow-md"
           >
-            <!-- Gallery карточки -->
-            <div class="relative">
+            <div class="relative rounded-xl overflow-hidden group aspect-[4/4]">
               <img
                 src="img/girlfifth.jpg"
                 alt="Фото"
-                class="rounded-xl aspect-[4/4] object-cover mb-2"
+                class="object-cover transition-transform duration-700 group-hover:scale-105"
               />
             </div>
 
@@ -878,6 +1084,14 @@
               <p>Ресторан</p>
               <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
               <p>"Пушкин"</p>
+            </div>
+            <div class="flex gap-1 text-mg items-center text-gray-600">
+              <img
+                src="img/price.svg"
+                alt="Price"
+                class="h-4 w-4 grayscale brightness-0"
+              />
+              <p>Условия оплаты</p>
               <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
               <p>50 / 50</p>
             </div>
@@ -925,11 +1139,13 @@
             class="relative bg-white p-4 rounded-xl border-2 border-amber-500 shadow-sd hover:shadow-md active:shadow-md"
           >
             <!-- Gallery карточки -->
-            <div class="relative">
+            <div
+              class="relative rounded-xl overflow-hidden group aspect-[4/4] object-cover"
+            >
               <img
                 src="img/girl10.jpg"
                 alt="Фото"
-                class="rounded-xl aspect-[4/4] object-cover mb-2"
+                class="transition-transform duration-700 group-hover:scale-105"
               />
             </div>
 
@@ -954,6 +1170,14 @@
               <p>Ресторан</p>
               <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
               <p>"Пушкин"</p>
+            </div>
+            <div class="flex gap-1 text-mg items-center text-gray-600">
+              <img
+                src="img/price.svg"
+                alt="Price"
+                class="h-4 w-4 grayscale brightness-0"
+              />
+              <p>Условия оплаты</p>
               <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
               <p>50 / 50</p>
             </div>
@@ -1000,12 +1224,13 @@
           <div
             class="relative bg-white p-4 rounded-xl shadow-sd hover:shadow-md active:shadow-md"
           >
-            <!-- Gallery карточки -->
-            <div class="relative">
+            <div
+              class="relative rounded-xl overflow-hidden group aspect-[4/4] object-cover"
+            >
               <img
                 src="img/girlfourth.jpg"
                 alt="Фото"
-                class="rounded-xl aspect-[4/4] object-cover mb-2"
+                class="transition-transform duration-700 group-hover:scale-105"
               />
             </div>
 
@@ -1030,6 +1255,14 @@
               <p>Ресторан</p>
               <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
               <p>"Пушкин"</p>
+            </div>
+            <div class="flex gap-1 text-mg items-center text-gray-600">
+              <img
+                src="img/price.svg"
+                alt="Price"
+                class="h-4 w-4 grayscale brightness-0"
+              />
+              <p>Условия оплаты</p>
               <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
               <p>50 / 50</p>
             </div>
@@ -1077,11 +1310,13 @@
             class="relative bg-white p-4 rounded-xl shadow-sd hover:shadow-md active:shadow-md"
           >
             <!-- Gallery карточки -->
-            <div class="relative">
+            <div
+              class="relative rounded-xl overflow-hidden group aspect-[4/4] object-cover"
+            >
               <img
-                src="img/girl9.jpg"
+                src="img/girl11.jpg"
                 alt="Фото"
-                class="rounded-xl aspect-[4/4] object-cover mb-2"
+                class="transition-transform duration-700 group-hover:scale-105"
               />
             </div>
 
@@ -1106,6 +1341,14 @@
               <p>Ресторан</p>
               <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
               <p>"Пушкин"</p>
+            </div>
+            <div class="flex gap-1 text-mg items-center text-gray-600">
+              <img
+                src="img/price.svg"
+                alt="Price"
+                class="h-4 w-4 grayscale brightness-0"
+              />
+              <p>Условия оплаты</p>
               <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
               <p>50 / 50</p>
             </div>

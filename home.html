@@ -73,6 +73,10 @@
       }
 
       .search-block:nth-child(4) {
+        animation-delay: 0.3s;
+      }
+
+      .search-block:nth-child(5) {
         animation-delay: 0.4s;
       }
     </style>
@@ -91,7 +95,7 @@
         class="flex justify-self-center border border-1 border-sky-500 rounded-full space-x-0.5 p-[0.1rem]"
       >
         <button
-          class="flex items-center justify-center h-8 w-14 px-2 py-[0.1rem] text-sm font-medium rounded-full transition shadow bg-gradient-to-r from-sky-400 via-blue-400 to-indigo-400 hover:bg-blue-500 active:bg-blue-500 transition-all duration-200"
+          class="flex items-center justify-center h-8 w-14 px-2 py-[0.1rem] text-sm font-medium rounded-full transition shadow bg-gradient-to-r from-sky-400 via-blue-400 to-indigo-400 hover:from-cyan-400 hover:to-blue-400 active:from-cyan-400 active:to-blue-400 transition-all duration-200"
           data-type="pair"
         >
           <img
@@ -1037,7 +1041,7 @@
 
       <!-- Поиск -->
       <div
-        class="flex items-center justify-between w-full rounded-lg min-w-[9rem]"
+        class="search-block flex items-center justify-between w-full rounded-lg min-w-[9rem]"
       >
         <!-- Пустой элемент-заглушка для выравнивания -->
         <div class="w-20"></div>
@@ -2816,7 +2820,7 @@
       >
         <a href="card.html">
           <div
-            class="relative bg-white p-4 rounded-xl shadow-sd hover:shadow-md active:shadow-md"
+            class="flex flex-col gap-2 relative bg-white p-4 rounded-xl shadow-sd hover:shadow-md active:shadow-md"
           >
             <div class="relative rounded-xl overflow-hidden group aspect-[4/4]">
               <img
@@ -2827,38 +2831,40 @@
             </div>
 
             <!-- Body карточки -->
-            <h2 class="text-mg font-semibold text-gray-600">Алина, 24</h2>
-            <div class="flex gap-1 text-mg items-center text-gray-600">
-              <img
-                src="img/time.svg"
-                alt="Time"
-                class="h-4 w-4 grayscale brightness-0"
-              />
-              <p>3 августа</p>
-              <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
-              <p>17:17</p>
+            <div class="flex flex-col">
+              <h2 class="text-mg font-semibold text-gray-600">Алина, 24</h2>
+              <div class="flex gap-1 text-mg items-center text-gray-600">
+                <img
+                  src="img/time.svg"
+                  alt="Time"
+                  class="h-4 w-4 grayscale brightness-0"
+                />
+                <p>3 августа</p>
+                <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                <p>17:17</p>
+              </div>
+              <div class="flex gap-1 text-mg items-center text-gray-600">
+                <img
+                  src="img/restaurant.svg"
+                  alt="Restaurant"
+                  class="h-4 w-4 grayscale brightness-0"
+                />
+                <p>Ресторан</p>
+                <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                <p>"Пушкин"</p>
+              </div>
+              <div class="flex gap-1 text-mg items-center text-gray-600">
+                <img
+                  src="img/price.svg"
+                  alt="Price"
+                  class="h-4 w-4 grayscale brightness-0"
+                />
+                <p>Условия оплаты</p>
+                <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                <p>50 / 50</p>
+              </div>
             </div>
-            <div class="flex gap-1 text-mg items-center text-gray-600">
-              <img
-                src="img/restaurant.svg"
-                alt="Restaurant"
-                class="h-4 w-4 grayscale brightness-0"
-              />
-              <p>Ресторан</p>
-              <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
-              <p>"Пушкин"</p>
-            </div>
-            <div class="flex gap-1 text-mg items-center text-gray-600">
-              <img
-                src="img/price.svg"
-                alt="Price"
-                class="h-4 w-4 grayscale brightness-0"
-              />
-              <p>Условия оплаты</p>
-              <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
-              <p>50 / 50</p>
-            </div>
-            <div class="border border-dashed border-gray-300 mt-2 mb-3"></div>
+            <div class="border border-dashed border-gray-300"></div>
 
             <!-- Bottom карточки -->
             <div class="flex items-center justify-between">
@@ -2899,7 +2905,7 @@
 
         <a href="card.html">
           <div
-            class="relative bg-white p-4 rounded-xl border-2 border-amber-500 shadow-sd hover:shadow-md active:shadow-md"
+            class="flex flex-col relative bg-white p-4 rounded-xl border-2 border-amber-500 shadow-sd hover:shadow-md active:shadow-md gap-2"
           >
             <!-- Gallery карточки -->
             <div
@@ -2913,125 +2919,42 @@
             </div>
 
             <!-- Body карточки -->
-            <h2 class="text-mg font-semibold text-gray-600">Алина, 24</h2>
-            <div class="flex gap-1 text-mg items-center text-gray-600">
-              <img
-                src="img/time.svg"
-                alt="Time"
-                class="h-4 w-4 grayscale brightness-0"
-              />
-              <p>3 августа</p>
-              <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
-              <p>17:17</p>
-            </div>
-            <div class="flex gap-1 text-mg items-center text-gray-600">
-              <img
-                src="img/restaurant.svg"
-                alt="Restaurant"
-                class="h-4 w-4 grayscale brightness-0"
-              />
-              <p>Ресторан</p>
-              <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
-              <p>"Пушкин"</p>
-            </div>
-            <div class="flex gap-1 text-mg items-center text-gray-600">
-              <img
-                src="img/price.svg"
-                alt="Price"
-                class="h-4 w-4 grayscale brightness-0"
-              />
-              <p>Условия оплаты</p>
-              <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
-              <p>50 / 50</p>
-            </div>
-            <div class="border border-dashed border-gray-300 mt-2 mb-3"></div>
-
-            <!-- Buttom карточки -->
-            <div class="flex items-center justify-between">
-              <div class="flex gap-2 items-center">
-                <div
-                  class="flex items-center gap-1 border-[0.01rem] border-gray-500 border-dashed hover:bg-gray-100 rounded-full px-2 py-0.5"
-                >
-                  <img src="img/rating.svg" alt="Rating" class="h-4 w-4" />
-                  <p class="text-sm text-gray-600">4.7</p>
-                </div>
-                <div
-                  class="hover:bg-gray-100 rounded-full border-[0.01rem] border-gray-500 border-dashed hover:bg-gray-100 p-1"
-                >
-                  <img
-                    src="img/favorites.svg"
-                    alt="Favorites"
-                    class="h-4 w-4"
-                  />
-                </div>
-                <div
-                  class="hover:bg-gray-100 rounded-full border-[0.01rem] border-gray-500 border-dashed hover:bg-gray-100 p-1"
-                >
-                  <img
-                    src="img/share.svg"
-                    alt="Share"
-                    class="h-4 w-4 hover:bg-gray-100 rounded-full"
-                  />
-                </div>
+            <div class="flex flex-col">
+              <h2 class="text-mg font-semibold text-gray-600">Алина, 24</h2>
+              <div class="flex gap-1 text-mg items-center text-gray-600">
+                <img
+                  src="img/time.svg"
+                  alt="Time"
+                  class="h-4 w-4 grayscale brightness-0"
+                />
+                <p>3 августа</p>
+                <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                <p>17:17</p>
               </div>
-              <button
-                class="flex items-center px-3 py-1.5 rounded-full text-sm text-amber-500 font-semibold border-2 border-amber-500 hover:border-amber-100 active:border-amber-100 transition-all duration-200"
-              >
-                Пригласить
-              </button>
+              <div class="flex gap-1 text-mg items-center text-gray-600">
+                <img
+                  src="img/restaurant.svg"
+                  alt="Restaurant"
+                  class="h-4 w-4 grayscale brightness-0"
+                />
+                <p>Ресторан</p>
+                <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                <p>"Пушкин"</p>
+              </div>
+              <div class="flex gap-1 text-mg items-center text-gray-600">
+                <img
+                  src="img/price.svg"
+                  alt="Price"
+                  class="h-4 w-4 grayscale brightness-0"
+                />
+                <p>Условия оплаты</p>
+                <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                <p>50 / 50</p>
+              </div>
             </div>
-          </div>
-        </a>
+            <div class="border border-dashed border-gray-300"></div>
 
-        <a href="card.html">
-          <div
-            class="relative bg-white p-4 rounded-xl shadow-sd hover:shadow-md active:shadow-md"
-          >
-            <div
-              class="relative rounded-xl overflow-hidden group aspect-[4/4] object-cover"
-            >
-              <img
-                src="img/girlfourth.jpg"
-                alt="Фото"
-                class="transition-transform duration-700 group-hover:scale-105"
-              />
-            </div>
-
-            <!-- Body карточки -->
-            <h2 class="text-mg font-semibold text-gray-600">Алина, 24</h2>
-            <div class="flex gap-1 text-mg items-center text-gray-600">
-              <img
-                src="img/time.svg"
-                alt="Time"
-                class="h-4 w-4 grayscale brightness-0"
-              />
-              <p>3 августа</p>
-              <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
-              <p>17:17</p>
-            </div>
-            <div class="flex gap-1 text-mg items-center text-gray-600">
-              <img
-                src="img/restaurant.svg"
-                alt="Restaurant"
-                class="h-4 w-4 grayscale brightness-0"
-              />
-              <p>Ресторан</p>
-              <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
-              <p>"Пушкин"</p>
-            </div>
-            <div class="flex gap-1 text-mg items-center text-gray-600">
-              <img
-                src="img/price.svg"
-                alt="Price"
-                class="h-4 w-4 grayscale brightness-0"
-              />
-              <p>Условия оплаты</p>
-              <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
-              <p>50 / 50</p>
-            </div>
-            <div class="border border-dashed border-gray-300 mt-2 mb-3"></div>
-
-            <!-- Buttom карточки -->
+            <!-- Bottom карточки -->
             <div class="flex items-center justify-between">
               <div class="flex gap-2 items-center">
                 <div
@@ -3070,11 +2993,98 @@
 
         <a href="card.html">
           <div
-            class="relative bg-white p-4 rounded-xl shadow-sd hover:shadow-md active:shadow-md"
+            class="flex flex-col relative bg-white p-4 rounded-xl shadow-sd hover:shadow-md active:shadow-md gap-2"
+          >
+            <div
+              class="flex flex-col relative rounded-xl overflow-hidden group aspect-[4/4] object-cover gap-2"
+            >
+              <img
+                src="img/girlfourth.jpg"
+                alt="Фото"
+                class="transition-transform duration-700 group-hover:scale-105"
+              />
+            </div>
+
+            <!-- Body карточки -->
+            <div class="flex flex-col">
+              <h2 class="text-mg font-semibold text-gray-600">Алина, 24</h2>
+              <div class="flex gap-1 text-mg items-center text-gray-600">
+                <img
+                  src="img/time.svg"
+                  alt="Time"
+                  class="h-4 w-4 grayscale brightness-0"
+                />
+                <p>3 августа</p>
+                <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                <p>17:17</p>
+              </div>
+              <div class="flex gap-1 text-mg items-center text-gray-600">
+                <img
+                  src="img/restaurant.svg"
+                  alt="Restaurant"
+                  class="h-4 w-4 grayscale brightness-0"
+                />
+                <p>Ресторан</p>
+                <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                <p>"Пушкин"</p>
+              </div>
+              <div class="flex gap-1 text-mg items-center text-gray-600">
+                <img
+                  src="img/price.svg"
+                  alt="Price"
+                  class="h-4 w-4 grayscale brightness-0"
+                />
+                <p>Условия оплаты</p>
+                <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                <p>50 / 50</p>
+              </div>
+            </div>
+            <div class="border border-dashed border-gray-300"></div>
+
+            <!-- Bottom карточки -->
+            <div class="flex items-center justify-between">
+              <div class="flex gap-2 items-center">
+                <div
+                  class="flex items-center gap-1 border-[0.01rem] border-gray-500 border-dashed hover:bg-gray-100 rounded-full px-2 py-0.5"
+                >
+                  <img src="img/rating.svg" alt="Rating" class="h-4 w-4" />
+                  <p class="text-sm text-gray-600">4.7</p>
+                </div>
+                <div
+                  class="hover:bg-gray-100 rounded-full border-[0.01rem] border-gray-500 border-dashed hover:bg-gray-100 p-1"
+                >
+                  <img
+                    src="img/favorites.svg"
+                    alt="Favorites"
+                    class="h-4 w-4"
+                  />
+                </div>
+                <div
+                  class="hover:bg-gray-100 rounded-full border-[0.01rem] border-gray-500 border-dashed hover:bg-gray-100 p-1"
+                >
+                  <img
+                    src="img/share.svg"
+                    alt="Share"
+                    class="h-4 w-4 hover:bg-gray-100 rounded-full"
+                  />
+                </div>
+              </div>
+              <button
+                class="flex items-center px-3 py-1.5 rounded-full text-sm text-gray-600 font-semibold border-2 border-gray-600 hover:border-gray-400 active:border-gray-400 transition-all duration-200"
+              >
+                Пригласить
+              </button>
+            </div>
+          </div>
+        </a>
+
+        <a href="card.html">
+          <div
+            class="flex flex-col relative bg-white p-4 rounded-xl shadow-sd hover:shadow-md active:shadow-md gap-2"
           >
             <!-- Gallery карточки -->
             <div
-              class="relative rounded-xl overflow-hidden group aspect-[4/4] object-cover"
+              class="flex flex-col relative rounded-xl overflow-hidden group aspect-[4/4] object-cover gap-2"
             >
               <img
                 src="img/girl11.jpg"
@@ -3084,40 +3094,42 @@
             </div>
 
             <!-- Body карточки -->
-            <h2 class="text-mg font-semibold text-gray-600">Алина, 24</h2>
-            <div class="flex gap-1 text-mg items-center text-gray-600">
-              <img
-                src="img/time.svg"
-                alt="Time"
-                class="h-4 w-4 grayscale brightness-0"
-              />
-              <p>3 августа</p>
-              <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
-              <p>17:17</p>
+            <div class="flex flex-col">
+              <h2 class="text-mg font-semibold text-gray-600">Алина, 24</h2>
+              <div class="flex gap-1 text-mg items-center text-gray-600">
+                <img
+                  src="img/time.svg"
+                  alt="Time"
+                  class="h-4 w-4 grayscale brightness-0"
+                />
+                <p>3 августа</p>
+                <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                <p>17:17</p>
+              </div>
+              <div class="flex gap-1 text-mg items-center text-gray-600">
+                <img
+                  src="img/restaurant.svg"
+                  alt="Restaurant"
+                  class="h-4 w-4 grayscale brightness-0"
+                />
+                <p>Ресторан</p>
+                <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                <p>"Пушкин"</p>
+              </div>
+              <div class="flex gap-1 text-mg items-center text-gray-600">
+                <img
+                  src="img/price.svg"
+                  alt="Price"
+                  class="h-4 w-4 grayscale brightness-0"
+                />
+                <p>Условия оплаты</p>
+                <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                <p>50 / 50</p>
+              </div>
             </div>
-            <div class="flex gap-1 text-mg items-center text-gray-600">
-              <img
-                src="img/restaurant.svg"
-                alt="Restaurant"
-                class="h-4 w-4 grayscale brightness-0"
-              />
-              <p>Ресторан</p>
-              <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
-              <p>"Пушкин"</p>
-            </div>
-            <div class="flex gap-1 text-mg items-center text-gray-600">
-              <img
-                src="img/price.svg"
-                alt="Price"
-                class="h-4 w-4 grayscale brightness-0"
-              />
-              <p>Условия оплаты</p>
-              <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
-              <p>50 / 50</p>
-            </div>
-            <div class="border border-dashed border-gray-300 mt-2 mb-3"></div>
+            <div class="border border-dashed border-gray-300"></div>
 
-            <!-- Buttom карточки -->
+            <!-- Bottom карточки -->
             <div class="flex items-center justify-between">
               <div class="flex gap-2 items-center">
                 <div
@@ -3156,44 +3168,53 @@
 
         <a href="card.html">
           <div
-            class="relative bg-white p-4 rounded-xl shadow-sd hover:shadow-md active:shadow-md"
+            class="flex flex-col gap-2 relative bg-white p-4 rounded-xl shadow-sd hover:shadow-md active:shadow-md"
           >
-            <!-- Gallery карточки -->
-            <div class="relative">
+            <div class="relative rounded-xl overflow-hidden group aspect-[4/4]">
               <img
                 src="img/girlfifth.jpg"
                 alt="Фото"
-                class="rounded-xl aspect-[4/4] object-cover mb-2"
+                class="object-cover transition-transform duration-700 group-hover:scale-105"
               />
             </div>
 
             <!-- Body карточки -->
-            <h2 class="text-mg font-semibold text-gray-600">Алина, 24</h2>
-            <div class="flex gap-1 text-mg items-center text-gray-600">
-              <img
-                src="img/time.svg"
-                alt="Time"
-                class="h-4 w-4 grayscale brightness-0"
-              />
-              <p>3 августа</p>
-              <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
-              <p>17:17</p>
+            <div class="flex flex-col">
+              <h2 class="text-mg font-semibold text-gray-600">Алина, 24</h2>
+              <div class="flex gap-1 text-mg items-center text-gray-600">
+                <img
+                  src="img/time.svg"
+                  alt="Time"
+                  class="h-4 w-4 grayscale brightness-0"
+                />
+                <p>3 августа</p>
+                <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                <p>17:17</p>
+              </div>
+              <div class="flex gap-1 text-mg items-center text-gray-600">
+                <img
+                  src="img/restaurant.svg"
+                  alt="Restaurant"
+                  class="h-4 w-4 grayscale brightness-0"
+                />
+                <p>Ресторан</p>
+                <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                <p>"Пушкин"</p>
+              </div>
+              <div class="flex gap-1 text-mg items-center text-gray-600">
+                <img
+                  src="img/price.svg"
+                  alt="Price"
+                  class="h-4 w-4 grayscale brightness-0"
+                />
+                <p>Условия оплаты</p>
+                <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                <p>50 / 50</p>
+              </div>
             </div>
-            <div class="flex gap-1 text-mg items-center text-gray-600">
-              <img
-                src="img/restaurant.svg"
-                alt="Restaurant"
-                class="h-4 w-4 grayscale brightness-0"
-              />
-              <p>Ресторан</p>
-              <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
-              <p>"Пушкин"</p>
-              <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
-              <p>50 / 50</p>
-            </div>
-            <div class="border border-dashed border-gray-300 mt-2 mb-3"></div>
+            <div class="border border-dashed border-gray-300"></div>
 
-            <!-- Buttom карточки -->
+            <!-- Bottom карточки -->
             <div class="flex items-center justify-between">
               <div class="flex gap-2 items-center">
                 <div
@@ -3232,44 +3253,56 @@
 
         <a href="card.html">
           <div
-            class="relative bg-white p-4 rounded-xl shadow-sd hover:shadow-md active:shadow-md"
+            class="flex flex-col relative bg-white p-4 rounded-xl border-2 border-amber-500 shadow-sd hover:shadow-md active:shadow-md gap-2"
           >
             <!-- Gallery карточки -->
-            <div class="relative">
+            <div
+              class="relative rounded-xl overflow-hidden group aspect-[4/4] object-cover"
+            >
               <img
                 src="img/girl10.jpg"
                 alt="Фото"
-                class="rounded-xl aspect-[4/4] object-cover mb-2"
+                class="transition-transform duration-700 group-hover:scale-105"
               />
             </div>
 
             <!-- Body карточки -->
-            <h2 class="text-mg font-semibold text-gray-600">Алина, 24</h2>
-            <div class="flex gap-1 text-mg items-center text-gray-600">
-              <img
-                src="img/time.svg"
-                alt="Time"
-                class="h-4 w-4 grayscale brightness-0"
-              />
-              <p>3 августа</p>
-              <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
-              <p>17:17</p>
+            <div class="flex flex-col">
+              <h2 class="text-mg font-semibold text-gray-600">Алина, 24</h2>
+              <div class="flex gap-1 text-mg items-center text-gray-600">
+                <img
+                  src="img/time.svg"
+                  alt="Time"
+                  class="h-4 w-4 grayscale brightness-0"
+                />
+                <p>3 августа</p>
+                <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                <p>17:17</p>
+              </div>
+              <div class="flex gap-1 text-mg items-center text-gray-600">
+                <img
+                  src="img/restaurant.svg"
+                  alt="Restaurant"
+                  class="h-4 w-4 grayscale brightness-0"
+                />
+                <p>Ресторан</p>
+                <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                <p>"Пушкин"</p>
+              </div>
+              <div class="flex gap-1 text-mg items-center text-gray-600">
+                <img
+                  src="img/price.svg"
+                  alt="Price"
+                  class="h-4 w-4 grayscale brightness-0"
+                />
+                <p>Условия оплаты</p>
+                <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                <p>50 / 50</p>
+              </div>
             </div>
-            <div class="flex gap-1 text-mg items-center text-gray-600">
-              <img
-                src="img/restaurant.svg"
-                alt="Restaurant"
-                class="h-4 w-4 grayscale brightness-0"
-              />
-              <p>Ресторан</p>
-              <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
-              <p>"Пушкин"</p>
-              <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
-              <p>50 / 50</p>
-            </div>
-            <div class="border border-dashed border-gray-300 mt-2 mb-3"></div>
+            <div class="border border-dashed border-gray-300"></div>
 
-            <!-- Buttom карточки -->
+            <!-- Bottom карточки -->
             <div class="flex items-center justify-between">
               <div class="flex gap-2 items-center">
                 <div
@@ -3308,44 +3341,55 @@
 
         <a href="card.html">
           <div
-            class="relative bg-white p-4 rounded-xl shadow-sd hover:shadow-md active:shadow-md"
+            class="flex flex-col relative bg-white p-4 rounded-xl shadow-sd hover:shadow-md active:shadow-md gap-2"
           >
-            <!-- Gallery карточки -->
-            <div class="relative">
+            <div
+              class="flex flex-col relative rounded-xl overflow-hidden group aspect-[4/4] object-cover gap-2"
+            >
               <img
                 src="img/girlfourth.jpg"
                 alt="Фото"
-                class="rounded-xl aspect-[4/4] object-cover mb-2"
+                class="transition-transform duration-700 group-hover:scale-105"
               />
             </div>
 
             <!-- Body карточки -->
-            <h2 class="text-mg font-semibold text-gray-600">Алина, 24</h2>
-            <div class="flex gap-1 text-mg items-center text-gray-600">
-              <img
-                src="img/time.svg"
-                alt="Time"
-                class="h-4 w-4 grayscale brightness-0"
-              />
-              <p>3 августа</p>
-              <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
-              <p>17:17</p>
+            <div class="flex flex-col">
+              <h2 class="text-mg font-semibold text-gray-600">Алина, 24</h2>
+              <div class="flex gap-1 text-mg items-center text-gray-600">
+                <img
+                  src="img/time.svg"
+                  alt="Time"
+                  class="h-4 w-4 grayscale brightness-0"
+                />
+                <p>3 августа</p>
+                <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                <p>17:17</p>
+              </div>
+              <div class="flex gap-1 text-mg items-center text-gray-600">
+                <img
+                  src="img/restaurant.svg"
+                  alt="Restaurant"
+                  class="h-4 w-4 grayscale brightness-0"
+                />
+                <p>Ресторан</p>
+                <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                <p>"Пушкин"</p>
+              </div>
+              <div class="flex gap-1 text-mg items-center text-gray-600">
+                <img
+                  src="img/price.svg"
+                  alt="Price"
+                  class="h-4 w-4 grayscale brightness-0"
+                />
+                <p>Условия оплаты</p>
+                <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                <p>50 / 50</p>
+              </div>
             </div>
-            <div class="flex gap-1 text-mg items-center text-gray-600">
-              <img
-                src="img/restaurant.svg"
-                alt="Restaurant"
-                class="h-4 w-4 grayscale brightness-0"
-              />
-              <p>Ресторан</p>
-              <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
-              <p>"Пушкин"</p>
-              <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
-              <p>50 / 50</p>
-            </div>
-            <div class="border border-dashed border-gray-300 mt-2 mb-3"></div>
+            <div class="border border-dashed border-gray-300"></div>
 
-            <!-- Buttom карточки -->
+            <!-- Bottom карточки -->
             <div class="flex items-center justify-between">
               <div class="flex gap-2 items-center">
                 <div
@@ -3384,44 +3428,404 @@
 
         <a href="card.html">
           <div
-            class="relative bg-white p-4 rounded-xl shadow-sd hover:shadow-md active:shadow-md"
+            class="flex flex-col relative bg-white p-4 rounded-xl shadow-sd hover:shadow-md active:shadow-md gap-2"
           >
             <!-- Gallery карточки -->
-            <div class="relative">
+            <div
+              class="flex flex-col relative rounded-xl overflow-hidden group aspect-[4/4] object-cover gap-2"
+            >
               <img
-                src="img/girl9.jpg"
+                src="img/girl11.jpg"
                 alt="Фото"
-                class="rounded-xl aspect-[4/4] object-cover mb-2"
+                class="transition-transform duration-700 group-hover:scale-105"
               />
             </div>
 
             <!-- Body карточки -->
-            <h2 class="text-mg font-semibold text-gray-600">Алина, 24</h2>
-            <div class="flex gap-1 text-mg items-center text-gray-600">
-              <img
-                src="img/time.svg"
-                alt="Time"
-                class="h-4 w-4 grayscale brightness-0"
-              />
-              <p>3 августа</p>
-              <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
-              <p>17:17</p>
+            <div class="flex flex-col">
+              <h2 class="text-mg font-semibold text-gray-600">Алина, 24</h2>
+              <div class="flex gap-1 text-mg items-center text-gray-600">
+                <img
+                  src="img/time.svg"
+                  alt="Time"
+                  class="h-4 w-4 grayscale brightness-0"
+                />
+                <p>3 августа</p>
+                <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                <p>17:17</p>
+              </div>
+              <div class="flex gap-1 text-mg items-center text-gray-600">
+                <img
+                  src="img/restaurant.svg"
+                  alt="Restaurant"
+                  class="h-4 w-4 grayscale brightness-0"
+                />
+                <p>Ресторан</p>
+                <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                <p>"Пушкин"</p>
+              </div>
+              <div class="flex gap-1 text-mg items-center text-gray-600">
+                <img
+                  src="img/price.svg"
+                  alt="Price"
+                  class="h-4 w-4 grayscale brightness-0"
+                />
+                <p>Условия оплаты</p>
+                <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                <p>50 / 50</p>
+              </div>
             </div>
-            <div class="flex gap-1 text-mg items-center text-gray-600">
-              <img
-                src="img/restaurant.svg"
-                alt="Restaurant"
-                class="h-4 w-4 grayscale brightness-0"
-              />
-              <p>Ресторан</p>
-              <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
-              <p>"Пушкин"</p>
-              <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
-              <p>50 / 50</p>
-            </div>
-            <div class="border border-dashed border-gray-300 mt-2 mb-3"></div>
+            <div class="border border-dashed border-gray-300"></div>
 
-            <!-- Buttom карточки -->
+            <!-- Bottom карточки -->
+            <div class="flex items-center justify-between">
+              <div class="flex gap-2 items-center">
+                <div
+                  class="flex items-center gap-1 border-[0.01rem] border-gray-500 border-dashed hover:bg-gray-100 rounded-full px-2 py-0.5"
+                >
+                  <img src="img/rating.svg" alt="Rating" class="h-4 w-4" />
+                  <p class="text-sm text-gray-600">4.7</p>
+                </div>
+                <div
+                  class="hover:bg-gray-100 rounded-full border-[0.01rem] border-gray-500 border-dashed hover:bg-gray-100 p-1"
+                >
+                  <img
+                    src="img/favorites.svg"
+                    alt="Favorites"
+                    class="h-4 w-4"
+                  />
+                </div>
+                <div
+                  class="hover:bg-gray-100 rounded-full border-[0.01rem] border-gray-500 border-dashed hover:bg-gray-100 p-1"
+                >
+                  <img
+                    src="img/share.svg"
+                    alt="Share"
+                    class="h-4 w-4 hover:bg-gray-100 rounded-full"
+                  />
+                </div>
+              </div>
+              <button
+                class="flex items-center px-3 py-1.5 rounded-full text-sm text-gray-600 font-semibold border-2 border-gray-600 hover:border-gray-400 active:border-gray-400 transition-all duration-200"
+              >
+                Пригласить
+              </button>
+            </div>
+          </div>
+        </a>
+
+        <a href="card.html">
+          <div
+            class="flex flex-col gap-2 relative bg-white p-4 rounded-xl shadow-sd hover:shadow-md active:shadow-md"
+          >
+            <div class="relative rounded-xl overflow-hidden group aspect-[4/4]">
+              <img
+                src="img/girlfifth.jpg"
+                alt="Фото"
+                class="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+            </div>
+
+            <!-- Body карточки -->
+            <div class="flex flex-col">
+              <h2 class="text-mg font-semibold text-gray-600">Алина, 24</h2>
+              <div class="flex gap-1 text-mg items-center text-gray-600">
+                <img
+                  src="img/time.svg"
+                  alt="Time"
+                  class="h-4 w-4 grayscale brightness-0"
+                />
+                <p>3 августа</p>
+                <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                <p>17:17</p>
+              </div>
+              <div class="flex gap-1 text-mg items-center text-gray-600">
+                <img
+                  src="img/restaurant.svg"
+                  alt="Restaurant"
+                  class="h-4 w-4 grayscale brightness-0"
+                />
+                <p>Ресторан</p>
+                <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                <p>"Пушкин"</p>
+              </div>
+              <div class="flex gap-1 text-mg items-center text-gray-600">
+                <img
+                  src="img/price.svg"
+                  alt="Price"
+                  class="h-4 w-4 grayscale brightness-0"
+                />
+                <p>Условия оплаты</p>
+                <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                <p>50 / 50</p>
+              </div>
+            </div>
+            <div class="border border-dashed border-gray-300"></div>
+
+            <!-- Bottom карточки -->
+            <div class="flex items-center justify-between">
+              <div class="flex gap-2 items-center">
+                <div
+                  class="flex items-center gap-1 border-[0.01rem] border-gray-500 border-dashed hover:bg-gray-100 rounded-full px-2 py-0.5"
+                >
+                  <img src="img/rating.svg" alt="Rating" class="h-4 w-4" />
+                  <p class="text-sm text-gray-600">4.7</p>
+                </div>
+                <div
+                  class="hover:bg-gray-100 rounded-full border-[0.01rem] border-gray-500 border-dashed hover:bg-gray-100 p-1"
+                >
+                  <img
+                    src="img/favorites.svg"
+                    alt="Favorites"
+                    class="h-4 w-4"
+                  />
+                </div>
+                <div
+                  class="hover:bg-gray-100 rounded-full border-[0.01rem] border-gray-500 border-dashed hover:bg-gray-100 p-1"
+                >
+                  <img
+                    src="img/share.svg"
+                    alt="Share"
+                    class="h-4 w-4 hover:bg-gray-100 rounded-full"
+                  />
+                </div>
+              </div>
+              <button
+                class="flex items-center px-3 py-1.5 rounded-full text-sm text-gray-600 font-semibold border-2 border-gray-600 hover:border-gray-400 active:border-gray-400 transition-all duration-200"
+              >
+                Пригласить
+              </button>
+            </div>
+          </div>
+        </a>
+
+        <a href="card.html">
+          <div
+            class="flex flex-col relative bg-white p-4 rounded-xl border-2 border-amber-500 shadow-sd hover:shadow-md active:shadow-md gap-2"
+          >
+            <!-- Gallery карточки -->
+            <div
+              class="relative rounded-xl overflow-hidden group aspect-[4/4] object-cover"
+            >
+              <img
+                src="img/girl10.jpg"
+                alt="Фото"
+                class="transition-transform duration-700 group-hover:scale-105"
+              />
+            </div>
+
+            <!-- Body карточки -->
+            <div class="flex flex-col">
+              <h2 class="text-mg font-semibold text-gray-600">Алина, 24</h2>
+              <div class="flex gap-1 text-mg items-center text-gray-600">
+                <img
+                  src="img/time.svg"
+                  alt="Time"
+                  class="h-4 w-4 grayscale brightness-0"
+                />
+                <p>3 августа</p>
+                <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                <p>17:17</p>
+              </div>
+              <div class="flex gap-1 text-mg items-center text-gray-600">
+                <img
+                  src="img/restaurant.svg"
+                  alt="Restaurant"
+                  class="h-4 w-4 grayscale brightness-0"
+                />
+                <p>Ресторан</p>
+                <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                <p>"Пушкин"</p>
+              </div>
+              <div class="flex gap-1 text-mg items-center text-gray-600">
+                <img
+                  src="img/price.svg"
+                  alt="Price"
+                  class="h-4 w-4 grayscale brightness-0"
+                />
+                <p>Условия оплаты</p>
+                <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                <p>50 / 50</p>
+              </div>
+            </div>
+            <div class="border border-dashed border-gray-300"></div>
+
+            <!-- Bottom карточки -->
+            <div class="flex items-center justify-between">
+              <div class="flex gap-2 items-center">
+                <div
+                  class="flex items-center gap-1 border-[0.01rem] border-gray-500 border-dashed hover:bg-gray-100 rounded-full px-2 py-0.5"
+                >
+                  <img src="img/rating.svg" alt="Rating" class="h-4 w-4" />
+                  <p class="text-sm text-gray-600">4.7</p>
+                </div>
+                <div
+                  class="hover:bg-gray-100 rounded-full border-[0.01rem] border-gray-500 border-dashed hover:bg-gray-100 p-1"
+                >
+                  <img
+                    src="img/favorites.svg"
+                    alt="Favorites"
+                    class="h-4 w-4"
+                  />
+                </div>
+                <div
+                  class="hover:bg-gray-100 rounded-full border-[0.01rem] border-gray-500 border-dashed hover:bg-gray-100 p-1"
+                >
+                  <img
+                    src="img/share.svg"
+                    alt="Share"
+                    class="h-4 w-4 hover:bg-gray-100 rounded-full"
+                  />
+                </div>
+              </div>
+              <button
+                class="flex items-center px-3 py-1.5 rounded-full text-sm text-gray-600 font-semibold border-2 border-gray-600 hover:border-gray-400 active:border-gray-400 transition-all duration-200"
+              >
+                Пригласить
+              </button>
+            </div>
+          </div>
+        </a>
+
+        <a href="card.html">
+          <div
+            class="flex flex-col relative bg-white p-4 rounded-xl shadow-sd hover:shadow-md active:shadow-md gap-2"
+          >
+            <div
+              class="flex flex-col relative rounded-xl overflow-hidden group aspect-[4/4] object-cover gap-2"
+            >
+              <img
+                src="img/girlfourth.jpg"
+                alt="Фото"
+                class="transition-transform duration-700 group-hover:scale-105"
+              />
+            </div>
+
+            <!-- Body карточки -->
+            <div class="flex flex-col">
+              <h2 class="text-mg font-semibold text-gray-600">Алина, 24</h2>
+              <div class="flex gap-1 text-mg items-center text-gray-600">
+                <img
+                  src="img/time.svg"
+                  alt="Time"
+                  class="h-4 w-4 grayscale brightness-0"
+                />
+                <p>3 августа</p>
+                <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                <p>17:17</p>
+              </div>
+              <div class="flex gap-1 text-mg items-center text-gray-600">
+                <img
+                  src="img/restaurant.svg"
+                  alt="Restaurant"
+                  class="h-4 w-4 grayscale brightness-0"
+                />
+                <p>Ресторан</p>
+                <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                <p>"Пушкин"</p>
+              </div>
+              <div class="flex gap-1 text-mg items-center text-gray-600">
+                <img
+                  src="img/price.svg"
+                  alt="Price"
+                  class="h-4 w-4 grayscale brightness-0"
+                />
+                <p>Условия оплаты</p>
+                <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                <p>50 / 50</p>
+              </div>
+            </div>
+            <div class="border border-dashed border-gray-300"></div>
+
+            <!-- Bottom карточки -->
+            <div class="flex items-center justify-between">
+              <div class="flex gap-2 items-center">
+                <div
+                  class="flex items-center gap-1 border-[0.01rem] border-gray-500 border-dashed hover:bg-gray-100 rounded-full px-2 py-0.5"
+                >
+                  <img src="img/rating.svg" alt="Rating" class="h-4 w-4" />
+                  <p class="text-sm text-gray-600">4.7</p>
+                </div>
+                <div
+                  class="hover:bg-gray-100 rounded-full border-[0.01rem] border-gray-500 border-dashed hover:bg-gray-100 p-1"
+                >
+                  <img
+                    src="img/favorites.svg"
+                    alt="Favorites"
+                    class="h-4 w-4"
+                  />
+                </div>
+                <div
+                  class="hover:bg-gray-100 rounded-full border-[0.01rem] border-gray-500 border-dashed hover:bg-gray-100 p-1"
+                >
+                  <img
+                    src="img/share.svg"
+                    alt="Share"
+                    class="h-4 w-4 hover:bg-gray-100 rounded-full"
+                  />
+                </div>
+              </div>
+              <button
+                class="flex items-center px-3 py-1.5 rounded-full text-sm text-gray-600 font-semibold border-2 border-gray-600 hover:border-gray-400 active:border-gray-400 transition-all duration-200"
+              >
+                Пригласить
+              </button>
+            </div>
+          </div>
+        </a>
+
+        <a href="card.html">
+          <div
+            class="flex flex-col relative bg-white p-4 rounded-xl shadow-sd hover:shadow-md active:shadow-md gap-2"
+          >
+            <!-- Gallery карточки -->
+            <div
+              class="flex flex-col relative rounded-xl overflow-hidden group aspect-[4/4] object-cover gap-2"
+            >
+              <img
+                src="img/girl11.jpg"
+                alt="Фото"
+                class="transition-transform duration-700 group-hover:scale-105"
+              />
+            </div>
+
+            <!-- Body карточки -->
+            <div class="flex flex-col">
+              <h2 class="text-mg font-semibold text-gray-600">Алина, 24</h2>
+              <div class="flex gap-1 text-mg items-center text-gray-600">
+                <img
+                  src="img/time.svg"
+                  alt="Time"
+                  class="h-4 w-4 grayscale brightness-0"
+                />
+                <p>3 августа</p>
+                <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                <p>17:17</p>
+              </div>
+              <div class="flex gap-1 text-mg items-center text-gray-600">
+                <img
+                  src="img/restaurant.svg"
+                  alt="Restaurant"
+                  class="h-4 w-4 grayscale brightness-0"
+                />
+                <p>Ресторан</p>
+                <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                <p>"Пушкин"</p>
+              </div>
+              <div class="flex gap-1 text-mg items-center text-gray-600">
+                <img
+                  src="img/price.svg"
+                  alt="Price"
+                  class="h-4 w-4 grayscale brightness-0"
+                />
+                <p>Условия оплаты</p>
+                <img src="img/ellipse.svg" alt="Ellipse" class="mt-1" />
+                <p>50 / 50</p>
+              </div>
+            </div>
+            <div class="border border-dashed border-gray-300"></div>
+
+            <!-- Bottom карточки -->
             <div class="flex items-center justify-between">
               <div class="flex gap-2 items-center">
                 <div
